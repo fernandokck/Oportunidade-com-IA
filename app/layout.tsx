@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import MouseGlow from "@/components/MouseGlow";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -59,6 +60,8 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-slate-50 dark:bg-cyber-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amberNeon selection:text-cyber-950 min-h-screen relative overflow-x-hidden transition-colors">
+        {/* Google Analytics 4 */}
+        <GoogleAnalytics gaId="G-6NTBGFKVMG" />
         {/* Luz fluorescente interativa que acompanha o mouse */}
         <MouseGlow />
         {children}
