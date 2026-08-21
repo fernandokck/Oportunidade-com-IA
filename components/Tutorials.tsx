@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import SectionHead from "./SectionHead";
 
-interface TutorialVideo {
+export interface TutorialVideo {
   id: string;
+  project: string;
+  projectSlug: string;
   youtubeId: string;
   url: string;
   title: string;
@@ -12,70 +14,183 @@ interface TutorialVideo {
   description: string;
 }
 
-const tutorials: TutorialVideo[] = [
+const tutorialsData: TutorialVideo[] = [
+  // 1. Hub.xyz (2 vídeos)
   {
-    id: "1",
-    youtubeId: "kik77s48KxA",
-    url: "https://youtu.be/kik77s48KxA?si=UpeSFYq9ig01BnX0",
-    title: "Treinamento de IA com Tarefas Domésticas: Como Funciona na Prática",
-    tag: "Tutorial Completo",
-    description:
-      "Apresentação prática de como gravar as tarefas do cotidiano, preparar o ambiente e submeter seus primeiros clipes.",
-  },
-  {
-    id: "2",
-    youtubeId: "jep0jc5TwKM",
-    url: "https://youtu.be/jep0jc5TwKM?si=bhZIfZvy0uUoN3tn",
-    title: "Setup do Suporte de Cabeça e Ângulo Correto de POV",
-    tag: "Equipamento & Enquadramento",
-    description:
-      "Como posicionar o celular na testa para capturar a perspectiva exata em primeira pessoa exigida pelos modelos de visão da IA.",
-  },
-  {
-    id: "3",
-    youtubeId: "cjQNlW67_os",
-    url: "https://youtu.be/cjQNlW67_os?si=11LRONEJ4fQVFkdm",
-    title: "Passo a Passo de Cadastro e Como Evitar Rejeições",
-    tag: "Aprovação Rápida",
-    description:
-      "Instruções detalhadas para aprovação de vídeos de primeira: iluminação, visibilidade das mãos e parâmetros técnicos.",
-  },
-  {
-    id: "4",
+    id: "hub-1",
+    project: "Hub.xyz",
+    projectSlug: "hub",
     youtubeId: "rdjhmFXLUGM",
-    url: "https://youtu.be/rdjhmFXLUGM?si=dCVAAHnnbHW0mZ9p",
-    title: "Processamento de Pagamentos, Saques via Pix e Cripto",
+    url: "https://youtu.be/rdjhmFXLUGM?si=PExWSq_XLIoiPnQD",
+    title: "Hub.xyz: Processamento de Pagamentos e Saques",
     tag: "Pagamentos & Saques",
     description:
-      "Demonstração do painel de ganhos, fechamento de marcos, transferências automáticas e como sacar seu saldo.",
+      "Aprenda o passo a passo de como funciona o painel de ganhos, transferências automáticas e como sacar seu saldo no Hub.xyz.",
+  },
+  {
+    id: "hub-2",
+    project: "Hub.xyz",
+    projectSlug: "hub",
+    youtubeId: "cjQNlW67_os",
+    url: "https://youtu.be/cjQNlW67_os?si=4_jRpnVkfQ4MV2Pv",
+    title: "Hub.xyz: Gravação de Tarefas e Como Evitar Rejeições",
+    tag: "Gravação & Aprovação",
+    description:
+      "Diretrizes práticas de enquadramento, iluminação e posicionamento das mãos para ter seus vídeos aprovados de primeira.",
+  },
+
+  // 2. Crowtado (1 vídeo)
+  {
+    id: "crowtado-1",
+    project: "Crowtado",
+    projectSlug: "crowtado",
+    youtubeId: "pEXs90dgDvA",
+    url: "https://www.youtube.com/watch?v=pEXs90dgDvA",
+    title: "Crowtado: Tutorial Completo de Execução e Tarefas",
+    tag: "Guia Completo",
+    description:
+      "Apresentação prática de como navegar na esteira de missões da Crowtado, submeter clipes e receber em dólar convertido via Pix.",
+  },
+
+  // 3. Claru.ai (1 vídeo)
+  {
+    id: "claru-1",
+    project: "Claru.ai",
+    projectSlug: "claru",
+    youtubeId: "1uVMIyhR_eQ",
+    url: "https://www.youtube.com/watch?v=1uVMIyhR_eQ",
+    title: "Claru.ai: Cadastro, Envio de Vídeos e Remuneração",
+    tag: "Passo a Passo",
+    description:
+      "Como se cadastrar na Claru.ai, entender o pagamento semanal automático às terças-feiras e cumprir as horas exigidas.",
+  },
+
+  // 4. Micro 1 (1 vídeo)
+  {
+    id: "micro1-1",
+    project: "Micro 1",
+    projectSlug: "micro1",
+    youtubeId: "bf5e-6nL2HY",
+    url: "https://www.youtube.com/watch?v=bf5e-6nL2HY",
+    title: "Micro 1: Avaliação Técnica e Processo de Aplicação",
+    tag: "Processo Seletivo",
+    description:
+      "Entenda como aplicar para a Micro 1, as exigências de avaliação e como atingir a remuneração de até US$ 15/hora sem fluência.",
+  },
+
+  // 5. Silencio (1 vídeo)
+  {
+    id: "silencio-1",
+    project: "Silencio",
+    projectSlug: "silencio",
+    youtubeId: "kik77s48KxA",
+    url: "https://youtu.be/kik77s48KxA?si=4Ed_udCwlf7HMACO",
+    title: "Silencio: Coleta de Dados com Aplicativo Nativo",
+    tag: "App Mobile",
+    description:
+      "Como instalar o aplicativo nativo da Silencio no celular, coletar dados com facilidade na rotina e acumular tokens/recompensas.",
+  },
+
+  // 6. Kgen (1 vídeo)
+  {
+    id: "kgen-1",
+    project: "Kgen",
+    projectSlug: "kgen",
+    youtubeId: "jep0jc5TwKM",
+    url: "https://youtu.be/jep0jc5TwKM?si=Euu6h32dP2ed7I1O",
+    title: "Kgen: Configuração de Perfil, Setup e Missões",
+    tag: "Setup & Missões",
+    description:
+      "Como configurar seu perfil na Kgen, posicionar o suporte de cabeça corretamente e resgatar suas recompensas de missões concluídas.",
+  },
+
+  // 7. Configurando o MINUTE App (1 vídeo)
+  {
+    id: "minute-1",
+    project: "MINUTE App",
+    projectSlug: "minute",
+    youtubeId: "30ua7df5QRc",
+    url: "https://www.youtube.com/watch?v=30ua7df5QRc",
+    title: "Configurando o MINUTE App: Setup e Otimização",
+    tag: "Configuração de App",
+    description:
+      "Instruções completas para instalar, configurar permissões e otimizar o aplicativo MINUTE para gravação contínua e sem travamentos.",
   },
 ];
 
+const projectTabs = [
+  { slug: "todos", name: "Todos", count: 8 },
+  { slug: "hub", name: "Hub.xyz", count: 2 },
+  { slug: "crowtado", name: "Crowtado", count: 1 },
+  { slug: "claru", name: "Claru.ai", count: 1 },
+  { slug: "micro1", name: "Micro 1", count: 1 },
+  { slug: "silencio", name: "Silencio", count: 1 },
+  { slug: "kgen", name: "Kgen", count: 1 },
+  { slug: "minute", name: "MINUTE App", count: 1 },
+];
+
 export default function Tutorials() {
+  const [selectedProject, setSelectedProject] = useState<string>("todos");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
+  const filteredTutorials = useMemo(() => {
+    if (selectedProject === "todos") return tutorialsData;
+    return tutorialsData.filter((item) => item.projectSlug === selectedProject);
+  }, [selectedProject]);
+
   return (
-    <section id="tutoriais" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-white dark:bg-cyber-950 py-12 sm:py-16 md:py-24 transition-colors">
-      {/* Glow ambient background */}
+    <section id="tutoriais" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-white dark:bg-cyber-950 py-12 sm:py-16 md:py-20 transition-colors">
+      {/* Ambient background accents */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-50"></div>
-      <div className="pointer-events-none absolute top-1/4 right-10 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[140px]"></div>
+      <div className="pointer-events-none absolute top-1/4 right-10 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[140px]"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
           index="04 · VÍDEOS TUTORIAIS"
-          title="Aprenda na Prática com os Tutoriais em Vídeo"
-          sub="Assista às demonstrações gravadas em vídeo para entender o funcionamento real das plataformas, o uso do suporte e os detalhes de saque."
+          title="Tutoriais em Vídeo por Projeto & Atividade"
+          sub="Selecione o projeto desejado para assistir aos tutoriais práticos de gravação, setup de equipamentos, configuração de aplicativos e saques."
         />
 
-        {/* 🎬 Grid de Miniaturas de Vídeos 🎬 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
-          {tutorials.map((v, index) => {
+        {/* 🎛️ Filtro Compacto & Sofisticado por Projeto 🎛️ */}
+        <div className="mb-6 sm:mb-8 overflow-x-auto pb-2 scrollbar-thin">
+          <div className="flex items-center gap-1.5 sm:gap-2 min-w-max">
+            {projectTabs.map((tab) => {
+              const isActive = selectedProject === tab.slug;
+              return (
+                <button
+                  key={tab.slug}
+                  onClick={() => setSelectedProject(tab.slug)}
+                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all duration-200 shrink-0 ${
+                    isActive
+                      ? "bg-gradient-to-r from-amber-400 via-amberNeon to-orange-500 text-cyber-950 shadow-sm shadow-amberNeon/40 scale-[1.02]"
+                      : "bg-slate-100 dark:bg-cyber-900/80 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-cyber-800 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-cyber-700"
+                  }`}
+                >
+                  <span>{tab.name}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                      isActive
+                        ? "bg-cyber-950/20 text-cyber-950 font-black"
+                        : "bg-slate-200 dark:bg-cyber-800 text-slate-500 dark:text-amber-200/70"
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 🎬 Grid Compacto e Sofisticado de Vídeos 🎬 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+          {filteredTutorials.map((v) => {
             const thumbnailUrl = `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg`;
 
             return (
               <div
                 key={v.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-cyber-700 bg-white dark:bg-cyber-900/90 shadow-sm hover:shadow-xl dark:hover:shadow-amber-glow backdrop-blur-xl transition-all duration-300 hover:border-amber-400 dark:hover:border-amberNeon/60"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 dark:border-cyber-700 bg-white dark:bg-cyber-900/90 shadow-sm hover:shadow-lg dark:hover:shadow-amber-glow backdrop-blur-xl transition-all duration-300 hover:border-amber-400 dark:hover:border-amberNeon/60 hover:-translate-y-0.5"
               >
                 {/* Thumbnail Header with Play Overlay */}
                 <div
@@ -89,55 +204,55 @@ export default function Tutorials() {
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
 
-                  {/* Top Tag */}
-                  <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-400/50 bg-black/80 px-2.5 py-1 text-[11px] font-mono font-bold text-amber-400 backdrop-blur-md">
+                  {/* Project & Tag Badge */}
+                  <div className="absolute top-2 left-2 flex items-center gap-1.5">
+                    <span className="inline-flex items-center gap-1 rounded-md border border-amber-400/50 bg-black/80 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-300 backdrop-blur-md">
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                      {v.tag}
+                      {v.project}
                     </span>
                   </div>
 
-                  {/* Centered Glowing Play Button */}
+                  {/* Centered Glowing Play Button (Compact & Sleek) */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-amber-500 dark:bg-amberNeon text-cyber-950 shadow-[0_0_30px_rgba(255,140,0,0.7)] group-hover:scale-110 group-hover:shadow-[0_0_45px_rgba(255,140,0,0.9)] transition-all duration-300">
-                      <svg className="w-5 h-5 sm:w-7 sm:h-7 translate-x-0.5 fill-current" viewBox="0 0 24 24">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-amber-500/95 dark:bg-amberNeon/95 text-cyber-950 shadow-[0_0_20px_rgba(255,140,0,0.6)] group-hover:scale-110 group-hover:shadow-[0_0_35px_rgba(255,140,0,0.85)] group-hover:bg-amber-400 transition-all duration-300">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 translate-x-0.5 fill-current" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
                   </div>
 
-                  {/* Duration / Click Hint */}
-                  <div className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 rounded bg-black/80 px-2 py-0.5 text-[10px] sm:text-[11px] font-mono text-slate-200 border border-white/20">
-                    Assistir Vídeo
+                  {/* Tag Pill Bottom */}
+                  <div className="absolute bottom-2 right-2 rounded bg-black/80 px-1.5 py-0.5 text-[9px] font-mono text-slate-300 border border-white/15">
+                    {v.tag}
                   </div>
                 </div>
 
                 {/* Body Content */}
-                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs font-mono text-amber-700 dark:text-amber-200/70 mb-1">
-                      Vídeo 0{index + 1}
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-amber-700 dark:text-amber-200/70 mb-1">
+                      {v.project}
                     </div>
-                    <h3 className="font-display text-base sm:text-lg lg:text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amberNeon transition-colors leading-snug">
+                    <h3 className="font-display text-sm sm:text-[15px] font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-amber-600 dark:group-hover:text-amberNeon transition-colors leading-snug line-clamp-2">
                       {v.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4 sm:mb-5">
+                    <p className="text-xs text-slate-600 dark:text-slate-300/90 leading-relaxed line-clamp-2 mb-3">
                       {v.description}
                     </p>
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center justify-between gap-2 pt-3.5 sm:pt-4 border-t border-slate-200 dark:border-cyber-700/80 text-xs">
+                  <div className="flex items-center justify-between gap-2 pt-2.5 border-t border-slate-100 dark:border-cyber-700/80 text-[11px]">
                     <button
                       onClick={() => setActiveVideo(v.youtubeId)}
-                      className="inline-flex items-center gap-1.5 font-bold text-amber-600 dark:text-amberNeon hover:text-amber-700 dark:hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amberNeon hover:text-amber-700 dark:hover:text-white transition-colors"
                     >
-                      <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                      <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
                       </svg>
-                      <span>Reproduzir na tela</span>
+                      <span>Assistir</span>
                     </button>
 
                     <a
@@ -146,8 +261,8 @@ export default function Tutorials() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 font-semibold text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-300 transition-colors whitespace-nowrap"
                     >
-                      <span>No YouTube</span>
-                      <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span>YouTube</span>
+                      <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -157,21 +272,28 @@ export default function Tutorials() {
             );
           })}
         </div>
+
+        {/* Footer info tip */}
+        <div className="mt-6 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-mono px-1">
+          <span>Mostrando <strong>{filteredTutorials.length}</strong> de <strong>{tutorialsData.length}</strong> vídeos</span>
+          <span className="hidden sm:inline">Clique no vídeo para reproduzir diretamente na página</span>
+        </div>
       </div>
 
-      {/* 📺 Modal de Reprodução de Vídeo Embutido 📺 */}
+      {/* 📺 Modal Sofisticado de Reprodução de Vídeo 📺 */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-4 backdrop-blur-md">
-          <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-amberNeon/50 bg-cyber-950 shadow-[0_0_60px_rgba(255,140,0,0.4)]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-4 backdrop-blur-md animate-fadeIn">
+          <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-amberNeon/50 bg-cyber-950 shadow-[0_0_60px_rgba(255,140,0,0.4)]">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-cyber-700 bg-cyber-900 px-4 py-3">
+            <div className="flex items-center justify-between border-b border-cyber-700 bg-cyber-900 px-4 py-2.5">
               <span className="text-xs font-mono font-bold text-amberNeon flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-amberNeon animate-ping"></span>
-                Reproduzindo Tutorial
+                Reproduzindo Tutorial Oficial
               </span>
               <button
                 onClick={() => setActiveVideo(null)}
                 className="rounded-lg p-1.5 text-slate-400 hover:bg-cyber-800 hover:text-white transition-all"
+                aria-label="Fechar vídeo"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
