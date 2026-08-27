@@ -30,6 +30,10 @@ export default function Footer() {
               Oportunidades
             </a>
             <span className="text-slate-700 dark:text-cyber-700">•</span>
+            <a href="#vagas-destaque" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
+              Vagas em Destaque
+            </a>
+            <span className="text-slate-700 dark:text-cyber-700">•</span>
             <a href="#comparativo" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
               Comparativo & Ranking
             </a>

@@ -78,33 +78,7 @@ const tutorialsData: TutorialVideo[] = [
       "Entenda como aplicar para a Micro 1, as exigências de avaliação e como atingir a remuneração de até US$ 15/hora sem fluência.",
   },
 
-  // 5. Silencio (1 vídeo)
-  {
-    id: "silencio-1",
-    project: "Silencio",
-    projectSlug: "silencio",
-    youtubeId: "kik77s48KxA",
-    url: "https://youtu.be/kik77s48KxA?si=4Ed_udCwlf7HMACO",
-    title: "Silencio: Coleta de Dados com Aplicativo Nativo",
-    tag: "App Mobile",
-    description:
-      "Como instalar o aplicativo nativo da Silencio no celular, coletar dados com facilidade na rotina e acumular tokens/recompensas.",
-  },
-
-  // 6. Kgen (1 vídeo)
-  {
-    id: "kgen-1",
-    project: "Kgen",
-    projectSlug: "kgen",
-    youtubeId: "jep0jc5TwKM",
-    url: "https://youtu.be/jep0jc5TwKM?si=Euu6h32dP2ed7I1O",
-    title: "Kgen: Configuração de Perfil, Setup e Missões",
-    tag: "Setup & Missões",
-    description:
-      "Como configurar seu perfil na Kgen, posicionar o suporte de cabeça corretamente e resgatar suas recompensas de missões concluídas.",
-  },
-
-  // 7. Configurando o MINUTE App (1 vídeo)
+  // 5. Configurando o MINUTE App (1 vídeo)
   {
     id: "minute-1",
     project: "MINUTE App",
@@ -119,13 +93,11 @@ const tutorialsData: TutorialVideo[] = [
 ];
 
 const projectTabs = [
-  { slug: "todos", name: "Todos", count: 8 },
+  { slug: "todos", name: "Todos", count: 6 },
   { slug: "hub", name: "Hub.xyz", count: 2 },
   { slug: "crowtado", name: "Crowtado", count: 1 },
   { slug: "claru", name: "Claru.ai", count: 1 },
   { slug: "micro1", name: "Micro 1", count: 1 },
-  { slug: "silencio", name: "Silencio", count: 1 },
-  { slug: "kgen", name: "Kgen", count: 1 },
   { slug: "minute", name: "MINUTE App", count: 1 },
 ];
 
@@ -146,7 +118,7 @@ export default function Tutorials() {
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="04 · VÍDEOS TUTORIAIS"
+          index="05 · VÍDEOS TUTORIAIS"
           title="Tutoriais em Vídeo por Projeto & Atividade"
           sub="Selecione o projeto desejado para assistir aos tutoriais práticos de gravação, setup de equipamentos, configuração de aplicativos e saques."
         />

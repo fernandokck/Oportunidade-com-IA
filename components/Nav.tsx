@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { href: "#requisitos", label: "Guia de Início" },
   { href: "#plataformas", label: "Oportunidades" },
+  { href: "#vagas-destaque", label: "Vagas em Destaque" },
   { href: "#comparativo", label: "Comparativo & Ranking" },
   { href: "#tutoriais", label: "Vídeos Tutoriais" },
   { href: "#faq", label: "Dúvidas Frequentes" },

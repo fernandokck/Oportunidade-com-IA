@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Requirements from "@/components/Requirements";
 import Platforms from "@/components/Platforms";
+import FeaturedJobs from "@/components/FeaturedJobs";
 import Comparison from "@/components/Comparison";
 import Tutorials from "@/components/Tutorials";
 import Faq from "@/components/Faq";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <Requirements />
         <Platforms />
+        <FeaturedJobs />
         <Comparison />
         <Tutorials />
         <Faq />

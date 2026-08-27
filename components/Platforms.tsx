@@ -4,6 +4,7 @@ interface PlatformItem {
   id: string;
   name: string;
   categoryTag?: string;
+  titleBadge?: string;
   payout: string;
   payoutBadge?: string;
   url: string;
@@ -14,6 +15,18 @@ interface PlatformItem {
 }
 
 const platforms: PlatformItem[] = [
+  {
+    id: "hub",
+    name: "Hub.xyz",
+    titleBadge: "Dá suporte gratuito",
+    payout: "US$ 5 a US$ 8 / hora",
+    payoutBadge: "Dá suporte gratuito",
+    url: "https://ai.hub.xyz/r/DEBIN5",
+    status: "Ativo",
+    highlight: "Aprovação rápida de vídeos & Suporte de Cabeça Grátis",
+    description:
+      "Aprova os vídeos enviados mais rápido e tem suporte responsivo. Envia o suporte elástico de cabeça gratuitamente para os usuários gravarem suas tarefas cotidianas.",
+  },
   {
     id: "claru",
     name: "Claru.ai",
@@ -48,28 +61,6 @@ const platforms: PlatformItem[] = [
       "igual a HUB porém aceita tarefas comerciais e muitas delas pagam melhor. Plataforma nova chegando no Brasil mais ja opera em mais de 100 países.",
   },
   {
-    id: "hub",
-    name: "Hub.xyz",
-    payout: "US$ 5 a US$ 8 / hora",
-    payoutBadge: "Aprovação ágil",
-    url: "https://ai.hub.xyz/r/DEBIN5",
-    status: "Ativo",
-    highlight: "Aprovação rápida de vídeos",
-    description:
-      "Aprova os vídeos enviados mais rápido e tem suporte responsivo. No momento, a fila de saque está passando por manutenção — vale o cadastro para acompanhar a reabertura.",
-  },
-  {
-    id: "kgen",
-    name: "Kgen",
-    payout: "US$ 3 + Bônus por hora",
-    payoutBadge: "Pagamento semanal",
-    url: "https://www.kgen.quest/invite/37c39886",
-    status: "Ativo",
-    highlight: "Aprovação mediante análise",
-    description:
-      "Igual a HUB em muitos aspectos, porém paga menos. Aprovação mediante análise. Só faz sentido usar se a HUB parar de vez.",
-  },
-  {
     id: "micro1",
     name: "Micro 1",
     payout: "US$ 20 a US$ 70 / hora",
@@ -82,24 +73,6 @@ const platforms: PlatformItem[] = [
         Aqui são para trabalhos de IA, tradução, leitura de texto, revisão de audio etc. Paga muito porém precisa ser selecionado no processo seletivo.{" "}
         <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon">
           Compensa demais aplicar pois não exige fluência em inglês.
-        </span>
-      </>
-    ),
-  },
-  {
-    id: "silencio",
-    name: "Silencio",
-    categoryTag: "Plataforma + Aplicativo nativo",
-    payout: "US$ 10 a US$ 20 / hora",
-    payoutBadge: "Aprovação Rápida",
-    url: "https://ai.silencio.store/opportunities/portuguese-brasil-3?ref=FSLDAE",
-    status: "Ativo",
-    highlight: "Dados de voz para IA em Português e outros Idiomas",
-    description: (
-      <>
-        Treine IA por meio da Voz, coleta de ruídos em ambientes e grupos de conversas na lingua nativa e outros idiomas e ganhe por hora validade + tickets de sorteio semanais.{" "}
-        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon">
-          Não precisa ser fluente
         </span>
       </>
     ),
@@ -174,10 +147,18 @@ export default function Platforms() {
                     </span>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-amber-600 dark:group-hover:text-amberNeon transition-colors">
-                    {p.name}
-                  </h3>
+                  {/* Title + Highlight Title Badge */}
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <h3 className="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amberNeon transition-colors">
+                      {p.name}
+                    </h3>
+                    {p.titleBadge && (
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-extrabold text-cyber-950 bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon shadow-sm animate-pulse border border-amber-300/60">
+                        <span>🎁</span>
+                        <span>{p.titleBadge}</span>
+                      </span>
+                    )}
+                  </div>
 
                   {/* 💰 QUANTO ESTÁ PAGANDO (EM DESTAQUE NA COLUNA) 💰 */}
                   <div className="mb-4 sm:mb-5 rounded-xl border border-slate-200 dark:border-cyber-700 bg-slate-50 dark:bg-cyber-950/80 p-3.5 sm:p-4 shadow-inner">

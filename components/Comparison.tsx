@@ -65,28 +65,6 @@ const allRows: ComparisonRow[] = [
     url: "https://parabuilders.io",
     notes: "Tarefas domésticas e comerciais em mais de 100 países.",
   },
-  {
-    p: "Silencio",
-    rank: 2,
-    difficulty: "Médio",
-    pay: "US$ 10 a US$ 20 / hora",
-    saque: "Cripto / Transferência",
-    min: "Sem mínimo",
-    status: "Ativo",
-    url: "https://ai.silencio.store/opportunities/portuguese-brasil-3?ref=FSLDAE",
-    notes: "Treino de IA via voz e ruídos acústicos. Não exige fluência.",
-  },
-  {
-    p: "Kgen",
-    rank: 3,
-    difficulty: "Médio",
-    pay: "US$ 3 + Bônus por hora",
-    saque: "Pix / Semanal",
-    min: "US$ 3",
-    status: "Ativo",
-    url: "https://www.kgen.quest/invite/37c39886",
-    notes: "Aprovação mediante análise, boa alternativa para fluxo contínuo.",
-  },
 
   // DIFÍCIL
   {
@@ -119,7 +97,7 @@ export default function Comparison() {
     <section id="comparativo" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-slate-50/50 dark:bg-cyber-950/70 py-12 sm:py-16 md:py-24 transition-colors">
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="03 · COMPARATIVO DIRETO & RANKING"
+          index="04 · COMPARATIVO DIRETO & RANKING"
           title="Ranking das Plataformas por Nível de Dificuldade"
           sub="Selecione seu nível de conhecimento para ver o ranking das melhores plataformas recomendadas para o seu perfil."
         />

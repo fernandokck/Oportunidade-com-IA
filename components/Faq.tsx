@@ -37,7 +37,7 @@ export default function Faq() {
     <section id="faq" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-slate-50/70 dark:bg-cyber-950/80 py-12 sm:py-16 md:py-24 transition-colors">
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="05 · DÚVIDAS FREQUENTES"
+          index="06 · DÚVIDAS FREQUENTES"
           title="Perguntas e Respostas sobre Treinar IA"
           sub="Tire suas dúvidas sobre funcionamento, equipamentos, aprovações e recebimento dos valores."
         />
