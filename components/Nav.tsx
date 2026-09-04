@@ -27,6 +27,9 @@ export default function Nav() {
             <img
               src="/logo.jpg"
               alt="Logo Oportunidades com IA"
+              width={40}
+              height={40}
+              decoding="async"
               className="h-full w-full object-cover object-center"
             />
           </div>

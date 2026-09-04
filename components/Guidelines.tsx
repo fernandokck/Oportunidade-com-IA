@@ -47,8 +47,8 @@ export default function Guidelines() {
     <section id="diretrizes" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-white dark:bg-cyber-950 py-12 sm:py-16 md:py-24 transition-colors">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-50"></div>
-      <div className="pointer-events-none absolute top-1/3 left-10 h-72 w-72 rounded-full bg-emerald-500/10 dark:bg-emerald-500/10 blur-[130px]"></div>
-      <div className="pointer-events-none absolute bottom-1/4 right-10 h-72 w-72 rounded-full bg-rose-500/10 dark:bg-rose-500/10 blur-[130px]"></div>
+      <div className="hidden sm:block pointer-events-none absolute top-1/3 left-10 h-72 w-72 rounded-full bg-emerald-500/10 dark:bg-emerald-500/10 blur-[130px]"></div>
+      <div className="hidden sm:block pointer-events-none absolute bottom-1/4 right-10 h-72 w-72 rounded-full bg-rose-500/10 dark:bg-rose-500/10 blur-[130px]"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead

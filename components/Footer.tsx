@@ -9,6 +9,10 @@ export default function Footer() {
                 <img
                   src="/logo.jpg"
                   alt="Logo Oportunidades com IA"
+                  width={36}
+                  height={36}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover object-center"
                 />
               </div>

@@ -3,8 +3,8 @@ export default function Hero() {
     <section className="relative overflow-hidden border-b border-slate-200 dark:border-cyber-700/80 bg-slate-50 dark:bg-cyber-950 py-10 sm:py-14 md:py-20 transition-colors">
       {/* Background glowing orbs & warm amber grid */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-70"></div>
-      <div className="pointer-events-none absolute -top-24 left-1/4 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-amber-400/20 dark:bg-amberNeon/15 blur-[100px] sm:blur-[130px] animate-amber-glow"></div>
-      <div className="pointer-events-none absolute top-1/3 -right-20 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-orange-400/15 dark:bg-fireNeon/15 blur-[120px] sm:blur-[150px] animate-amber-glow"></div>
+      <div className="hidden sm:block pointer-events-none absolute -top-24 left-1/4 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-amber-400/20 dark:bg-amberNeon/15 blur-[100px] sm:blur-[130px] animate-amber-glow"></div>
+      <div className="hidden sm:block pointer-events-none absolute top-1/3 -right-20 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-orange-400/15 dark:bg-fireNeon/15 blur-[120px] sm:blur-[150px] animate-amber-glow"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10 lg:gap-12 lg:grid-cols-12">
@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative w-full max-w-[340px] sm:max-w-[370px] group">
               {/* Fiery back ambient glow */}
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-amber-400/30 via-orange-500/20 to-amber-300/20 dark:from-amberNeon/40 dark:via-orange-600/30 dark:to-amber-300/30 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
+              <div className="hidden sm:block absolute -inset-2 rounded-3xl bg-gradient-to-tr from-amber-400/30 via-orange-500/20 to-amber-300/20 dark:from-amberNeon/40 dark:via-orange-600/30 dark:to-amber-300/30 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
               
               {/* Glass Card Housing */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-amberNeon/40 bg-white/95 dark:bg-cyber-900/90 shadow-2xl backdrop-blur-xl">
@@ -93,6 +93,7 @@ export default function Hero() {
                   <iframe
                     src="https://www.youtube.com/embed/tIg41c37V4Y?autoplay=1&mute=1&loop=1&playlist=tIg41c37V4Y&rel=0&modestbranding=1&playsinline=1"
                     title="Demonstração na prática: gravação de tarefas domésticas para treinamento de IA"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                     className="w-full h-full border-0"

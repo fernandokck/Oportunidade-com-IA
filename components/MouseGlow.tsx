@@ -4,27 +4,37 @@ import { useEffect, useState } from "react";
 
 export default function MouseGlow() {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
-  const [isClient, setIsClient] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    // Desativa completamente em dispositivos touch/mobile para economizar 100% de CPU/bateria
+    if (typeof window === "undefined" || !window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
 
+    setIsDesktop(true);
+
+    let animationFrameId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => {
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-  if (!isClient || !mousePosition) {
+  if (!isDesktop || !mousePosition) {
     return null;
   }
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-30 overflow-hidden transition-opacity duration-300">
+    <div className="pointer-events-none fixed inset-0 z-30 hidden md:block overflow-hidden transition-opacity duration-300 will-change-transform">
       {/* Dynamic Fluorescent Glowing Aura following cursor */}
       <div
         className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition-transform duration-75 ease-out"

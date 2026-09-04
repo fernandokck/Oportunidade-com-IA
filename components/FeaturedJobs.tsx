@@ -282,8 +282,8 @@ export default function FeaturedJobs() {
     >
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-50"></div>
-      <div className="pointer-events-none absolute -top-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/10 dark:bg-amberNeon/10 blur-[130px] animate-amber-glow"></div>
-      <div className="pointer-events-none absolute bottom-10 left-10 h-72 w-72 rounded-full bg-orange-500/10 dark:bg-fireNeon/10 blur-[120px]"></div>
+      <div className="hidden sm:block pointer-events-none absolute -top-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/10 dark:bg-amberNeon/10 blur-[130px] animate-amber-glow"></div>
+      <div className="hidden sm:block pointer-events-none absolute bottom-10 left-10 h-72 w-72 rounded-full bg-orange-500/10 dark:bg-fireNeon/10 blur-[120px]"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         {/* Section Header */}

@@ -114,7 +114,7 @@ export default function Tutorials() {
     <section id="tutoriais" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-white dark:bg-cyber-950 py-12 sm:py-16 md:py-20 transition-colors">
       {/* Ambient background accents */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-50"></div>
-      <div className="pointer-events-none absolute top-1/4 right-10 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[140px]"></div>
+      <div className="hidden sm:block pointer-events-none absolute top-1/4 right-10 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[140px]"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
@@ -172,6 +172,8 @@ export default function Tutorials() {
                   <img
                     src={thumbnailUrl}
                     alt={v.title}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
 

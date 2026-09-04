@@ -88,7 +88,7 @@ export default function Platforms() {
     <section id="plataformas" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-white dark:bg-cyber-950 py-12 sm:py-16 md:py-24 transition-colors">
       {/* Ambient glowing accents */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-50"></div>
-      <div className="pointer-events-none absolute bottom-10 left-1/3 h-80 w-80 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[130px]"></div>
+      <div className="hidden sm:block pointer-events-none absolute bottom-10 left-1/3 h-80 w-80 rounded-full bg-amber-400/10 dark:bg-amberNeon/10 blur-[130px]"></div>
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
