@@ -26,8 +26,16 @@ export default function Footer() {
               Guia de Início
             </a>
             <span className="text-slate-700 dark:text-cyber-700">•</span>
+            <a href="#diretrizes" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
+              Faça & Não Faça
+            </a>
+            <span className="text-slate-700 dark:text-cyber-700">•</span>
             <a href="#plataformas" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
               Oportunidades
+            </a>
+            <span className="text-slate-700 dark:text-cyber-700">•</span>
+            <a href="#como-gravar" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
+              Como Gravar
             </a>
             <span className="text-slate-700 dark:text-cyber-700">•</span>
             <a href="#vagas-destaque" className="text-slate-300 hover:text-amber-400 dark:hover:text-amberNeon transition-colors">
@@ -54,7 +62,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="https://chat.whatsapp.com/LyX5y4XkizD9Cz2CRSFgey"
+              href="https://chat.whatsapp.com/IpNve1GYwzG5RnKDWDbixV?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
               className="text-amber-400 hover:text-amber-300 hover:underline font-semibold text-xs whitespace-nowrap"

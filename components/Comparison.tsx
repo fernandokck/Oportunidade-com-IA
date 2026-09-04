@@ -61,9 +61,9 @@ const allRows: ComparisonRow[] = [
     pay: "US$ 5 a US$ 8 / hora",
     saque: "Dólar / Cripto",
     min: "Sem mínimo",
-    status: "Em análise",
-    url: "https://parabuilders.io",
-    notes: "Tarefas domésticas e comerciais em mais de 100 países.",
+    status: "Ativo",
+    url: "https://app.inventmoney.com/r/DNXHJWUM",
+    notes: "Upload de Vídeos direto na plataforma, não tem exigência de aparelhos celulares, mais a qualidade da filmagem precisa ser boa e na resolução 1080p 30fps ou 60pfs no modo 0,50x da camera.",
   },
 
   // DIFÍCIL
@@ -97,7 +97,7 @@ export default function Comparison() {
     <section id="comparativo" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-slate-50/50 dark:bg-cyber-950/70 py-12 sm:py-16 md:py-24 transition-colors">
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="04 · COMPARATIVO DIRETO & RANKING"
+          index="06 · COMPARATIVO DIRETO & RANKING"
           title="Ranking das Plataformas por Nível de Dificuldade"
           sub="Selecione seu nível de conhecimento para ver o ranking das melhores plataformas recomendadas para o seu perfil."
         />

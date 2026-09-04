@@ -5,9 +5,11 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#requisitos", label: "Guia de Início" },
+  { href: "#diretrizes", label: "Faça & Não Faça" },
   { href: "#plataformas", label: "Oportunidades" },
+  { href: "#como-gravar", label: "Como Gravar" },
   { href: "#vagas-destaque", label: "Vagas em Destaque" },
-  { href: "#comparativo", label: "Comparativo & Ranking" },
+  { href: "#comparativo", label: "Comparativo" },
   { href: "#tutoriais", label: "Vídeos Tutoriais" },
   { href: "#faq", label: "Dúvidas Frequentes" },
 ];
@@ -61,7 +63,7 @@ export default function Nav() {
 
           {/* 📲 WhatsApp Group CTA 📲 */}
           <a
-            href="https://chat.whatsapp.com/LyX5y4XkizD9Cz2CRSFgey"
+            href="https://chat.whatsapp.com/IpNve1GYwzG5RnKDWDbixV?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-[11px] sm:text-xs xl:text-sm font-bold text-cyber-950 bg-gradient-to-r from-amber-400 via-amberNeon to-orange-500 rounded-xl shadow-amber-glow hover:shadow-[0_0_35px_rgba(255,140,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 border border-amber-300/50 shrink-0 whitespace-nowrap"

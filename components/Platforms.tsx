@@ -5,6 +5,7 @@ interface PlatformItem {
   name: string;
   categoryTag?: string;
   titleBadge?: string;
+  titleBadgeIcon?: string;
   payout: string;
   payoutBadge?: string;
   url: string;
@@ -19,6 +20,7 @@ const platforms: PlatformItem[] = [
     id: "hub",
     name: "Hub.xyz",
     titleBadge: "Dá suporte gratuito",
+    titleBadgeIcon: "🎁",
     payout: "US$ 5 a US$ 8 / hora",
     payoutBadge: "Dá suporte gratuito",
     url: "https://ai.hub.xyz/r/DEBIN5",
@@ -26,6 +28,19 @@ const platforms: PlatformItem[] = [
     highlight: "Aprovação rápida de vídeos & Suporte de Cabeça Grátis",
     description:
       "Aprova os vídeos enviados mais rápido e tem suporte responsivo. Envia o suporte elástico de cabeça gratuitamente para os usuários gravarem suas tarefas cotidianas.",
+  },
+  {
+    id: "invent",
+    name: "Invent Money",
+    titleBadge: "Nova plataforma!",
+    titleBadgeIcon: "✨",
+    payout: "US$ 5 a US$ 8 / hora",
+    payoutBadge: "Ganhos em Dólar",
+    url: "https://app.inventmoney.com/r/DNXHJWUM",
+    status: "Ativo",
+    highlight: "Tarefas do dia a dia + comerciais",
+    description:
+      "Upload de Vídeos direto na plataforma, não tem exigência de aparelhos celulares, mais a qualidade da filmagem precisa ser boa e na resolução 1080p 30fps ou 60pfs no modo 0,50x da camera.",
   },
   {
     id: "claru",
@@ -48,17 +63,6 @@ const platforms: PlatformItem[] = [
     highlight: "Saque mínimo baixo (US$ 10)",
     description:
       "Tem a maior taxa por hora e saque mínimo de apenas US$ 10. O suporte ao usuário é focado no modelo self-service — funciona perfeitamente para quem executa tarefas com autonomia.",
-  },
-  {
-    id: "invent",
-    name: "Invent Money",
-    payout: "US$ 5 a US$ 8 / hora",
-    payoutBadge: "Ganhos em Dólar",
-    url: "https://parabuilders.io",
-    status: "Em análise",
-    highlight: "Tarefas do dia a dia + comerciais",
-    description:
-      "igual a HUB porém aceita tarefas comerciais e muitas delas pagam melhor. Plataforma nova chegando no Brasil mais ja opera em mais de 100 países.",
   },
   {
     id: "micro1",
@@ -88,7 +92,7 @@ export default function Platforms() {
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="02 · OPORTUNIDADES"
+          index="03 · OPORTUNIDADES"
           title="Plataformas de Treinamento de IA"
           sub="Compare o quanto cada plataforma está pagando, as características de cada tarefa e acesse diretamente os sites oficiais para começar."
         />
@@ -154,7 +158,7 @@ export default function Platforms() {
                     </h3>
                     {p.titleBadge && (
                       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-extrabold text-cyber-950 bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon shadow-sm animate-pulse border border-amber-300/60">
-                        <span>🎁</span>
+                        <span>{p.titleBadgeIcon || "🎁"}</span>
                         <span>{p.titleBadge}</span>
                       </span>
                     )}

@@ -118,7 +118,7 @@ export default function Tutorials() {
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="05 · VÍDEOS TUTORIAIS"
+          index="07 · VÍDEOS TUTORIAIS"
           title="Tutoriais em Vídeo por Projeto & Atividade"
           sub="Selecione o projeto desejado para assistir aos tutoriais práticos de gravação, setup de equipamentos, configuração de aplicativos e saques."
         />

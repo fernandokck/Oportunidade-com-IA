@@ -291,7 +291,7 @@ export default function FeaturedJobs() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono tracking-wider text-amber-700 dark:text-amberNeon bg-amber-500/10 dark:bg-amberNeon/10 border border-amber-500/30 dark:border-amberNeon/25 mb-3 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amberNeon animate-ping"></span>
-              03 · OPORTUNIDADES DE DESTAQUE
+              05 · OPORTUNIDADES DE DESTAQUE
             </div>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Vagas Abertas com Pagamento em Dólar por Hora
@@ -577,7 +577,7 @@ export default function FeaturedJobs() {
             </div>
           </div>
           <a
-            href="https://chat.whatsapp.com/LyX5y4XkizD9Cz2CRSFgey"
+            href="https://chat.whatsapp.com/IpNve1GYwzG5RnKDWDbixV?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 font-bold text-amber-700 dark:text-amberNeon hover:underline whitespace-nowrap shrink-0"

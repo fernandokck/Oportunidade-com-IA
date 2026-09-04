@@ -39,7 +39,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4">
               {/* Botão 1: Acesse a comunidade (WhatsApp) */}
               <a
-                href="https://chat.whatsapp.com/LyX5y4XkizD9Cz2CRSFgey"
+                href="https://chat.whatsapp.com/IpNve1GYwzG5RnKDWDbixV?mode=gi_t"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm text-cyber-950 bg-gradient-to-r from-amber-400 via-amberNeon to-orange-500 shadow-amber-glow hover:shadow-[0_0_40px_rgba(255,140,0,0.65)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border border-amber-300/50"
@@ -66,9 +66,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Hero Image with Cyborg & POV Elements */}
+          {/* Right Column: Hero Video Demonstration */}
           <div className="lg:col-span-5 flex justify-center w-full">
-            <div className="relative w-full max-w-[380px] sm:max-w-[440px] group">
+            <div className="relative w-full max-w-[340px] sm:max-w-[370px] group">
               {/* Fiery back ambient glow */}
               <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-amber-400/30 via-orange-500/20 to-amber-300/20 dark:from-amberNeon/40 dark:via-orange-600/30 dark:to-amber-300/30 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
               
@@ -78,45 +78,31 @@ export default function Hero() {
                 <div className="flex items-center justify-between px-3.5 sm:px-4 py-2 sm:py-2.5 bg-slate-100/90 dark:bg-cyber-950/90 border-b border-slate-200 dark:border-cyber-700 text-[11px] sm:text-xs font-mono text-slate-700 dark:text-slate-300">
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-red-500 animate-pulse"></span>
-                    <span className="text-red-600 dark:text-red-400 font-bold">REC 00:34</span>
+                    <span className="text-red-600 dark:text-red-400 font-bold">DEMO REAL</span>
                     <span className="text-slate-400 dark:text-cyber-600">|</span>
-                    <span className="text-amber-700 dark:text-amber-200">4K 60FPS POV</span>
+                    <span className="text-amber-700 dark:text-amber-200 font-semibold">POV NA PRÁTICA</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span>TREINO ATIVO</span>
                   </div>
                 </div>
 
-                {/* Main Photo */}
-                <div className="relative aspect-square w-full overflow-hidden bg-slate-100 dark:bg-cyber-950">
-                  <img
-                    src="/hero-person.jpg"
-                    alt="Pessoa gravando tarefas domésticas em primeira pessoa com suporte de celular na cabeça e recebendo em dólares"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                {/* Video Embed */}
+                <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
+                  <iframe
+                    src="https://www.youtube.com/embed/tIg41c37V4Y?autoplay=1&mute=1&loop=1&playlist=tIg41c37V4Y&rel=0&modestbranding=1&playsinline=1"
+                    title="Demonstração na prática: gravação de tarefas domésticas para treinamento de IA"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full border-0"
                   />
-
-                  {/* Futuristic visual overlays */}
-                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 rounded-lg bg-white/90 dark:bg-cyber-950/90 backdrop-blur-md border border-slate-200 dark:border-amberNeon/40 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-[11px] font-mono text-amber-800 dark:text-amberNeon flex items-center gap-1.5 sm:gap-2 shadow-lg">
-                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-500 dark:bg-amberNeon animate-ping"></span>
-                    <span>Visão Computacional: 98%</span>
-                  </div>
-
-                  <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 rounded-xl bg-white/95 dark:bg-cyber-950/95 backdrop-blur-md border border-emerald-500/40 dark:border-emerald-400/50 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs shadow-2xl flex items-center gap-2">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs sm:text-sm">
-                      $
-                    </div>
-                    <div>
-                      <div className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-300 uppercase font-mono">Remuneração Média</div>
-                      <div className="text-emerald-600 dark:text-emerald-400 font-extrabold text-xs sm:text-sm">US$ 5 - 8 / hora</div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Bottom caption bar */}
                 <div className="px-3.5 py-2.5 sm:px-4 sm:py-3 bg-slate-50/95 dark:bg-cyber-950/95 border-t border-slate-200 dark:border-cyber-700 text-xs text-slate-700 dark:text-amber-100 flex items-center justify-between">
-                  <span className="flex items-center gap-1.5 text-[11px] sm:text-xs">
-                    <span className="text-amber-600 dark:text-amberNeon font-bold">✓</span> Suporte de cabeça p/ celular
+                  <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-medium">
+                    <span className="text-amber-600 dark:text-amberNeon font-bold">✓</span> Veja como funciona na prática
                   </span>
                   <span className="text-slate-500 dark:text-amber-200/80 font-mono text-[10px] sm:text-[11px]">Gravação em 1ª pessoa</span>
                 </div>
