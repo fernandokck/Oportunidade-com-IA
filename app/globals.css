@@ -83,24 +83,6 @@ html:not(.dark) .bg-grid-pattern {
   animation: amberPulse 7s ease-in-out infinite;
 }
 
-/* 🚀 OTIMIZAÇÃO CRÍTICA PARA MOBILE: Remove filtros pesados que travam a GPU mobile 🚀 */
-@media (max-width: 768px) {
-  .backdrop-blur-xl,
-  .backdrop-blur-2xl,
-  .backdrop-blur-md {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  
-  [class*="blur-"] {
-    filter: blur(25px) !important;
-  }
-  
-  .animate-amber-glow {
-    animation: none !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
