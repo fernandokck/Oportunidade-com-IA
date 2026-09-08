@@ -18,8 +18,8 @@ export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 dark:border-cyber-700/80 bg-white/90 dark:bg-cyber-950/90 backdrop-blur-xl transition-colors">
-      <div className="mx-auto flex max-w-[1320px] items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3 gap-2 sm:gap-4">
+    <header className="border-b border-slate-200/80 dark:border-cyber-700/80 bg-white/90 dark:bg-cyber-950/90 backdrop-blur-xl transition-colors">
+      <div className="mx-auto flex max-w-[1320px] items-center justify-between px-3.5 sm:px-6 py-2 sm:py-2.5 gap-2 sm:gap-4">
         
         {/* Brand Logo with Cyborg Image */}
         <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 whitespace-nowrap">
