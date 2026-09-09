@@ -39,7 +39,33 @@ const tutorialsData: TutorialVideo[] = [
       "Diretrizes práticas de enquadramento, iluminação e posicionamento das mãos para ter seus vídeos aprovados de primeira.",
   },
 
-  // 2. Crowtado (1 vídeo)
+  // 2. Invent Money (1 vídeo)
+  {
+    id: "invent-1",
+    project: "Invent Money",
+    projectSlug: "invent",
+    youtubeId: "gaF5KtQxm4k",
+    url: "https://youtu.be/gaF5KtQxm4k?si=vbN2oQjMcJ-avMNn",
+    title: "Invent Money: Tutorial Completo e Ganhos com Celular",
+    tag: "Tutorial Completo",
+    description:
+      "Aprenda a faturar até R$ 40/hora com qualquer celular na Invent Money: criação de conta, gravação de tarefas no modo 0,5x e envio para aprovação.",
+  },
+
+  // 3. Receber em Dólar / Treinamento de IA (1 vídeo)
+  {
+    id: "dolar-1",
+    project: "Receber em Dólar",
+    projectSlug: "conta-dolar",
+    youtubeId: "6rONcJjxbs4",
+    url: "https://youtu.be/6rONcJjxbs4?si=BMcQdy-Qs5NSgqaC",
+    title: "Treinando IA: Como Criar Conta para Receber em Dólar",
+    tag: "Conta Internacional",
+    description:
+      "Passo a passo completo de como abrir e configurar sua conta para receber seus pagamentos em dólar do treinamento de IA diretamente no Brasil.",
+  },
+
+  // 4. Crowtado (1 vídeo)
   {
     id: "crowtado-1",
     project: "Crowtado",
@@ -52,7 +78,7 @@ const tutorialsData: TutorialVideo[] = [
       "Apresentação prática de como navegar na esteira de missões da Crowtado, submeter clipes e receber em dólar convertido via Pix.",
   },
 
-  // 3. Claru.ai (1 vídeo)
+  // 5. Claru.ai (1 vídeo)
   {
     id: "claru-1",
     project: "Claru.ai",
@@ -65,7 +91,7 @@ const tutorialsData: TutorialVideo[] = [
       "Como se cadastrar na Claru.ai, entender o pagamento semanal automático às terças-feiras e cumprir as horas exigidas.",
   },
 
-  // 4. Micro 1 (1 vídeo)
+  // 6. Micro 1 (1 vídeo)
   {
     id: "micro1-1",
     project: "Micro 1",
@@ -78,7 +104,7 @@ const tutorialsData: TutorialVideo[] = [
       "Entenda como aplicar para a Micro 1, as exigências de avaliação e como atingir a remuneração de até US$ 15/hora sem fluência.",
   },
 
-  // 5. Configurando o MINUTE App (1 vídeo)
+  // 7. Configurando o MINUTE App (1 vídeo)
   {
     id: "minute-1",
     project: "MINUTE App",
@@ -92,18 +118,28 @@ const tutorialsData: TutorialVideo[] = [
   },
 ];
 
-const projectTabs = [
-  { slug: "todos", name: "Todos", count: 6 },
-  { slug: "hub", name: "Hub.xyz", count: 2 },
-  { slug: "crowtado", name: "Crowtado", count: 1 },
-  { slug: "claru", name: "Claru.ai", count: 1 },
-  { slug: "micro1", name: "Micro 1", count: 1 },
-  { slug: "minute", name: "MINUTE App", count: 1 },
-];
-
 export default function Tutorials() {
   const [selectedProject, setSelectedProject] = useState<string>("todos");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const projectTabs = useMemo(() => {
+    const tabs: { slug: string; name: string; count: number }[] = [
+      { slug: "todos", name: "Todos", count: tutorialsData.length },
+    ];
+    const seen = new Set<string>();
+    for (const item of tutorialsData) {
+      if (!seen.has(item.projectSlug)) {
+        seen.add(item.projectSlug);
+        const count = tutorialsData.filter((t) => t.projectSlug === item.projectSlug).length;
+        tabs.push({
+          slug: item.projectSlug,
+          name: item.project,
+          count,
+        });
+      }
+    }
+    return tabs;
+  }, []);
 
   const filteredTutorials = useMemo(() => {
     if (selectedProject === "todos") return tutorialsData;
