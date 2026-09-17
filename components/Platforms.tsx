@@ -9,13 +9,26 @@ interface PlatformItem {
   payout: string;
   payoutBadge?: string;
   url: string;
-  status: "Ativo" | "Em análise" | "Saque Pausado";
+  status: "Ativo" | "Em análise" | "Saque Pausado" | "Pendente" | "Ausente";
   highlight: string;
   description: React.ReactNode;
   isBlank?: boolean;
 }
 
 const platforms: PlatformItem[] = [
+  {
+    id: "flambra",
+    name: "Flambra",
+    titleBadge: "Plataforma Nova!",
+    titleBadgeIcon: "✨",
+    payout: "US$ 5 / hora",
+    payoutBadge: "Toda Sexta-feira",
+    url: "https://app.flambra.com/?ref=58C7E55071",
+    status: "Ativo",
+    highlight: "Tarefas do dia a dia · Minute App",
+    description:
+      "Upload de vídeos usando o aplicativo da minute que tem como regra aparelhos de uso como Iphone 12 pra cima e Samsung S21 pra cima. Pagamento toda sexta-feira.",
+  },
   {
     id: "hub",
     name: "Hub.xyz",
@@ -32,8 +45,8 @@ const platforms: PlatformItem[] = [
   {
     id: "invent",
     name: "Invent Money",
-    titleBadge: "Nova plataforma!",
-    titleBadgeIcon: "✨",
+    titleBadge: "Ganhos em Dólar",
+    titleBadgeIcon: "💵",
     payout: "US$ 5 a US$ 8 / hora",
     payoutBadge: "Ganhos em Dólar",
     url: "https://app.inventmoney.com/r/DNXHJWUM",
@@ -57,12 +70,12 @@ const platforms: PlatformItem[] = [
     id: "crowtado",
     name: "Crowtado",
     payout: "US$ 8 / hora",
-    payoutBadge: "Maior taxa fixa",
+    payoutBadge: "Alerta de Instabilidade",
     url: "https://www.crowtado.com/sign-up?ref=N432SDBG",
-    status: "Ativo",
-    highlight: "Saque mínimo baixo (US$ 10)",
+    status: "Pendente",
+    highlight: "Problemas em Pagamentos e Upload",
     description:
-      "Tem a maior taxa por hora e saque mínimo de apenas US$ 10. O suporte ao usuário é focado no modelo self-service — funciona perfeitamente para quem executa tarefas com autonomia.",
+      "Atenção: A plataforma está sinalizada com instabilidades e problemas no processamento de pagamentos e no upload de vídeos. Recomendamos cautela e priorizar as demais plataformas ativas no momento.",
   },
   {
     id: "micro1",
@@ -101,6 +114,7 @@ export default function Platforms() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {platforms.map((p, index) => {
             const isPaused = p.status === "Saque Pausado";
+            const isPending = p.status === "Pendente" || p.status === "Ausente";
             const isAnalyzing = p.status === "Em análise";
 
             return (
@@ -111,6 +125,8 @@ export default function Platforms() {
                     ? "border-slate-200 dark:border-cyber-700/60 bg-slate-50/70 dark:bg-cyber-900/50 hover:border-slate-300 dark:hover:border-cyber-600"
                     : isPaused
                     ? "border-rose-400/40 dark:border-rose-500/30 bg-white dark:bg-cyber-900/80 hover:border-rose-500/60 hover:shadow-[0_0_25px_rgba(244,63,94,0.15)]"
+                    : isPending
+                    ? "border-amber-400/50 dark:border-amber-500/40 bg-amber-500/[0.03] dark:bg-cyber-900/85 hover:border-amber-500/70 hover:shadow-[0_0_25px_rgba(245,158,11,0.18)]"
                     : isAnalyzing
                     ? "border-yellow-400/40 dark:border-yellow-500/30 bg-white dark:bg-cyber-900/80 hover:border-yellow-500/60 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]"
                     : "border-slate-200 dark:border-cyber-700 bg-white dark:bg-cyber-900/90 hover:border-amber-400 dark:hover:border-amberNeon/60 shadow-sm hover:shadow-md dark:hover:shadow-amber-glow"
@@ -135,6 +151,8 @@ export default function Platforms() {
                           ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
                           : p.status === "Saque Pausado"
                           ? "bg-rose-500/15 text-rose-700 dark:text-rose-400 border-rose-500/30"
+                          : p.status === "Pendente" || p.status === "Ausente"
+                          ? "bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/40"
                           : "bg-yellow-500/15 text-yellow-700 dark:text-yellow-400 border-yellow-500/30"
                       }`}
                     >
@@ -144,6 +162,8 @@ export default function Platforms() {
                             ? "bg-emerald-500 dark:bg-emerald-400 animate-pulse"
                             : p.status === "Saque Pausado"
                             ? "bg-rose-500 dark:bg-rose-400 animate-pulse"
+                            : p.status === "Pendente" || p.status === "Ausente"
+                            ? "bg-amber-500 dark:bg-amber-400 animate-pulse"
                             : "bg-yellow-500 dark:bg-yellow-400 animate-pulse"
                         }`}
                       ></span>

@@ -15,7 +15,31 @@ export interface TutorialVideo {
 }
 
 const tutorialsData: TutorialVideo[] = [
-  // 1. Hub.xyz (2 vídeos)
+  // 1. Flambra (2 vídeos novos)
+  {
+    id: "flambra-1",
+    project: "Flambra",
+    projectSlug: "flambra",
+    youtubeId: "F9v2AgvwXjQ",
+    url: "https://youtu.be/F9v2AgvwXjQ?si=P1GvZF5R5NKX5_IJ",
+    title: "Flambra: Ela é Realmente Confiável? Vale a Pena? Entenda Tudo",
+    tag: "Análise & Primeiros Passos",
+    description:
+      "Entenda como funciona a plataforma Flambra, remuneração de 5$/h, regras de aparelhos (iPhone 12+ ou Galaxy S21+) e pagamentos semanais.",
+  },
+  {
+    id: "flambra-2",
+    project: "Flambra",
+    projectSlug: "flambra",
+    youtubeId: "9uINf3JFiKI",
+    url: "https://youtu.be/9uINf3JFiKI?si=LoRBHgBLndxMp54b",
+    title: "Flambra: A Plataforma nos Respondeu! Veja o que Aconteceu",
+    tag: "Atualização Oficial",
+    description:
+      "Confira os esclarecimentos oficiais da equipe Flambra, dúvidas sobre aprovações, pagamentos na sexta-feira e suporte aos treinadores.",
+  },
+
+  // 2. Hub.xyz (2 vídeos)
   {
     id: "hub-1",
     project: "Hub.xyz",
@@ -39,7 +63,18 @@ const tutorialsData: TutorialVideo[] = [
       "Diretrizes práticas de enquadramento, iluminação e posicionamento das mãos para ter seus vídeos aprovados de primeira.",
   },
 
-  // 2. Invent Money (1 vídeo)
+  // 3. Invent Money (2 vídeos)
+  {
+    id: "invent-2",
+    project: "Invent Money",
+    projectSlug: "invent",
+    youtubeId: "YaM4K87tE6c",
+    url: "https://youtu.be/YaM4K87tE6c?si=bFQrotrXEV2P6lca",
+    title: "Invent Money: Aprenda Como Sacar Seu Saldo Passo a Passo",
+    tag: "Saque & Carteira",
+    description:
+      "Tutorial completo ensinando a solicitar e receber seus ganhos da Invent Money de forma rápida e segura.",
+  },
   {
     id: "invent-1",
     project: "Invent Money",
@@ -52,7 +87,7 @@ const tutorialsData: TutorialVideo[] = [
       "Aprenda a faturar até R$ 40/hora com qualquer celular na Invent Money: criação de conta, gravação de tarefas no modo 0,5x e envio para aprovação.",
   },
 
-  // 3. Receber em Dólar / Treinamento de IA (1 vídeo)
+  // 4. Receber em Dólar / Treinamento de IA (1 vídeo)
   {
     id: "dolar-1",
     project: "Receber em Dólar",
@@ -65,7 +100,7 @@ const tutorialsData: TutorialVideo[] = [
       "Passo a passo completo de como abrir e configurar sua conta para receber seus pagamentos em dólar do treinamento de IA diretamente no Brasil.",
   },
 
-  // 4. Crowtado (1 vídeo)
+  // 5. Crowtado (1 vídeo)
   {
     id: "crowtado-1",
     project: "Crowtado",
@@ -78,7 +113,7 @@ const tutorialsData: TutorialVideo[] = [
       "Apresentação prática de como navegar na esteira de missões da Crowtado, submeter clipes e receber em dólar convertido via Pix.",
   },
 
-  // 5. Claru.ai (1 vídeo)
+  // 6. Claru.ai (1 vídeo)
   {
     id: "claru-1",
     project: "Claru.ai",
@@ -91,7 +126,7 @@ const tutorialsData: TutorialVideo[] = [
       "Como se cadastrar na Claru.ai, entender o pagamento semanal automático às terças-feiras e cumprir as horas exigidas.",
   },
 
-  // 6. Micro 1 (1 vídeo)
+  // 7. Micro 1 (1 vídeo)
   {
     id: "micro1-1",
     project: "Micro 1",
@@ -104,7 +139,7 @@ const tutorialsData: TutorialVideo[] = [
       "Entenda como aplicar para a Micro 1, as exigências de avaliação e como atingir a remuneração de até US$ 15/hora sem fluência.",
   },
 
-  // 7. Configurando o MINUTE App (1 vídeo)
+  // 8. Configurando o MINUTE App (1 vídeo)
   {
     id: "minute-1",
     project: "MINUTE App",
@@ -154,7 +189,7 @@ export default function Tutorials() {
 
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="07 · VÍDEOS TUTORIAIS"
+          index="06 · VÍDEOS TUTORIAIS"
           title="Tutoriais em Vídeo por Projeto & Atividade"
           sub="Selecione o projeto desejado para assistir aos tutoriais práticos de gravação, setup de equipamentos, configuração de aplicativos e saques."
         />

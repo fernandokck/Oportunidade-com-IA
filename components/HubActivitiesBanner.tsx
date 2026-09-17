@@ -26,16 +26,17 @@ interface ActivitySlide {
 
 const ACTIVITIES: ActivitySlide[] = [
   {
-    id: "blitz-independencia",
+    id: "sorteio-5x-iphones",
     theme: "emerald-mint",
-    bonusTag: "+20%",
-    avatarType: "runner",
-    avatarImage: "/runner-blitz.jpg",
-    title: "Blitz da Independência",
-    subtitle: "+20% por hora aprovada. US$ 42/h no trabalho, US$ 36/h em casa. Só 48 horas.",
+    bonusTag: "5x",
+    badgeText: "SORTEIO — ATIVO AGORA",
+    badgeType: "bonus",
+    avatarType: "gift",
+    title: "Sorteio de 5x iPhones",
+    subtitle: "5 iPhones para ganhar - Complete tarefas no trabalho",
     countdownLabel: "termina em",
-    countdownEnd: "2026-09-10T23:59:59",
-    ctaText: "Grave tarefas turbinadas",
+    countdownEnd: "2026-09-30T23:59:59",
+    ctaText: "Ver detalhes",
     ctaUrl: "https://ai.hub.xyz/r/DEBIN5",
   },
   {
@@ -51,13 +52,14 @@ const ACTIVITIES: ActivitySlide[] = [
       rate: "R$ 35/h",
     },
     tags: [
-      { icon: "🛢️", label: "Troca de óleo" },
-      { icon: "🪚", label: "Marcenaria" },
-      { icon: "🛞", label: "Trocar pneu" },
-      { icon: "🧹", label: "Limpeza" },
+      { icon: "🌿", label: "Paisagismo" },
+      { icon: "⚡", label: "Elétrica" },
+      { icon: "🛡️", label: "Inspeção" },
+      { icon: "✂️", label: "Costura" },
+      { icon: "❄️", label: "Climatização" },
     ],
-    referralCode: "NM529RMG",
-    ctaText: "Me leva lá",
+    referralCode: "WM529RMG",
+    ctaText: "Acessar HUB",
     ctaUrl: "https://ai.hub.xyz/r/DEBIN5",
   },
   {
@@ -84,7 +86,7 @@ export default function HubActivitiesBanner() {
   const [isPaused, setIsPaused] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-  const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 5, minutes: 42, seconds: 18 });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 8, minutes: 42, seconds: 35 });
   const [animatingDirection, setAnimatingDirection] = useState<"next" | "prev">("next");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -253,6 +255,10 @@ export default function HubActivitiesBanner() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                   </div>
+                ) : currentActivity.id === "sorteio-5x-iphones" ? (
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 flex items-center justify-center text-xl shadow-md ring-2 ring-emerald-400/80">
+                    📱
+                  </div>
                 ) : (
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-xl shadow-md ring-2 ring-amber-300">
                     🎁
@@ -263,6 +269,14 @@ export default function HubActivitiesBanner() {
               {/* Text content & badges */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-0.5">
+                  {/* Badge pill */}
+                  {currentActivity.badgeText && (
+                    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                      {currentActivity.badgeText}
+                    </span>
+                  )}
+
                   <span className="font-display font-black text-sm sm:text-base md:text-lg text-slate-900 dark:text-white tracking-tight truncate">
                     {currentActivity.title}
                   </span>
@@ -276,14 +290,6 @@ export default function HubActivitiesBanner() {
                       <span className="font-extrabold text-emerald-600 dark:text-emerald-400 text-sm sm:text-base tracking-tight bg-emerald-500/10 px-1.5 py-0.2 rounded border border-emerald-500/20">
                         {currentActivity.payoutHighlight.rate}
                       </span>
-                    </span>
-                  )}
-
-                  {/* Badge pill */}
-                  {currentActivity.badgeText && (
-                    <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                      {currentActivity.badgeText}
                     </span>
                   )}
                 </div>
@@ -317,11 +323,12 @@ export default function HubActivitiesBanner() {
               {/* Limited time Countdown Badge */}
               {currentActivity.countdownEnd && (
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/10 dark:bg-black/40 border border-black/10 dark:border-white/15 text-slate-800 dark:text-slate-200 text-xs font-mono">
+                  <span className="text-emerald-500">⏱</span>
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
                     {currentActivity.countdownLabel || "termina em"}
                   </span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">
-                    {timeLeft.days}d {String(timeLeft.hours).padStart(2, "0")}h {String(timeLeft.minutes).padStart(2, "0")}m
+                    {timeLeft.days > 0 ? `${timeLeft.days}d ` : ""}{timeLeft.hours}h {String(timeLeft.minutes).padStart(2, "0")}m
                   </span>
                 </div>
               )}

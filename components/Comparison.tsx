@@ -12,7 +12,7 @@ interface ComparisonRow {
   pay: string;
   saque: string;
   min: string;
-  status: "Ativo" | "Em análise" | "Saque Pausado";
+  status: "Ativo" | "Em análise" | "Saque Pausado" | "Pendente" | "Ausente";
   url: string;
   notes: string;
 }
@@ -20,8 +20,19 @@ interface ComparisonRow {
 const allRows: ComparisonRow[] = [
   // FÁCIL
   {
-    p: "Hub.xyz",
+    p: "Flambra",
     rank: 1,
+    difficulty: "Fácil",
+    pay: "US$ 5 / hora",
+    saque: "Dólar / Semanal",
+    min: "Sem mínimo",
+    status: "Ativo",
+    url: "https://app.flambra.com/?ref=58C7E55071",
+    notes: "Upload de vídeos via Minute app (iPhone 12+ / Galaxy S21+). Pagamento toda sexta-feira.",
+  },
+  {
+    p: "Hub.xyz",
+    rank: 2,
     difficulty: "Fácil",
     pay: "US$ 5 a US$ 8 / hora",
     saque: "Pix / Dolar",
@@ -29,17 +40,6 @@ const allRows: ComparisonRow[] = [
     status: "Ativo",
     url: "https://ai.hub.xyz/r/DEBIN5",
     notes: "Aprovação rápida e interface amigável para tarefas cotidianas simples.",
-  },
-  {
-    p: "Crowtado",
-    rank: 2,
-    difficulty: "Fácil",
-    pay: "US$ 8 / hora",
-    saque: "Pix / Dolar",
-    min: "US$ 10",
-    status: "Ativo",
-    url: "https://www.crowtado.com/sign-up?ref=N432SDBG",
-    notes: "Maior taxa fixa por hora para tarefas domésticas básicas em vídeo.",
   },
   {
     p: "Claru.ai",
@@ -51,6 +51,17 @@ const allRows: ComparisonRow[] = [
     status: "Ativo",
     url: "https://app.claru.ai/signup?ref=8a2r3gfj",
     notes: "Pagamento semanal automático toda terça-feira e bônus por horas.",
+  },
+  {
+    p: "Crowtado",
+    rank: 4,
+    difficulty: "Fácil",
+    pay: "US$ 8 / hora",
+    saque: "Pix / Dolar",
+    min: "US$ 10",
+    status: "Pendente",
+    url: "https://www.crowtado.com/sign-up?ref=N432SDBG",
+    notes: "Atenção: Apresentando instabilidades em pagamentos e upload de vídeos no momento.",
   },
 
   // MÉDIO
@@ -97,7 +108,7 @@ export default function Comparison() {
     <section id="comparativo" className="relative border-b border-slate-200 dark:border-cyber-700/80 bg-slate-50/50 dark:bg-cyber-950/70 py-12 sm:py-16 md:py-24 transition-colors">
       <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6">
         <SectionHead
-          index="06 · COMPARATIVO DIRETO & RANKING"
+          index="05 · COMPARATIVO DIRETO & RANKING"
           title="Ranking das Plataformas por Nível de Dificuldade"
           sub="Selecione seu nível de conhecimento para ver o ranking das melhores plataformas recomendadas para o seu perfil."
         />
@@ -228,20 +239,26 @@ export default function Comparison() {
                     {/* Status sincronizado com Oportunidades */}
                     <td className="px-5 sm:px-6 py-4">
                       <span
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border whitespace-nowrap shrink-0 ${r.status === "Ativo"
-                          ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
-                          : r.status === "Saque Pausado"
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border whitespace-nowrap shrink-0 ${
+                          r.status === "Ativo"
+                            ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
+                            : r.status === "Saque Pausado"
                             ? "bg-rose-500/15 text-rose-700 dark:text-rose-400 border-rose-500/30"
+                            : r.status === "Pendente" || r.status === "Ausente"
+                            ? "bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/40"
                             : "bg-yellow-500/15 text-yellow-700 dark:text-yellow-400 border-yellow-500/30"
-                          }`}
+                        }`}
                       >
                         <span
-                          className={`w-1.5 h-1.5 rounded-full shrink-0 ${r.status === "Ativo"
-                            ? "bg-emerald-500 dark:bg-emerald-400 animate-pulse"
-                            : r.status === "Saque Pausado"
+                          className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                            r.status === "Ativo"
+                              ? "bg-emerald-500 dark:bg-emerald-400 animate-pulse"
+                              : r.status === "Saque Pausado"
                               ? "bg-rose-500 dark:bg-rose-400 animate-pulse"
+                              : r.status === "Pendente" || r.status === "Ausente"
+                              ? "bg-amber-500 dark:bg-amber-400 animate-pulse"
                               : "bg-yellow-500 dark:bg-yellow-400 animate-pulse"
-                            }`}
+                          }`}
                         ></span>
                         {r.status}
                       </span>

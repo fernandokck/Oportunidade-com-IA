@@ -8,7 +8,6 @@ const links = [
   { href: "#diretrizes", label: "Faça & Não Faça" },
   { href: "#plataformas", label: "Oportunidades" },
   { href: "#como-gravar", label: "Como Gravar" },
-  { href: "#vagas-destaque", label: "Vagas em Destaque" },
   { href: "#comparativo", label: "Comparativo" },
   { href: "#tutoriais", label: "Vídeos Tutoriais" },
   { href: "#faq", label: "Dúvidas Frequentes" },
