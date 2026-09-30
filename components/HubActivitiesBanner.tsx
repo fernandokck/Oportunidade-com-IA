@@ -49,7 +49,7 @@ const ACTIVITIES: ActivitySlide[] = [
     title: "Agora você pode gravar no trabalho",
     payoutHighlight: {
       prefix: "Ganhe até",
-      rate: "R$ 35/h",
+      rate: "R$ 70/h",
     },
     tags: [
       { icon: "🌿", label: "Paisagismo" },
@@ -60,23 +60,6 @@ const ACTIVITIES: ActivitySlide[] = [
     ],
     referralCode: "WM529RMG",
     ctaText: "Acessar HUB",
-    ctaUrl: "https://ai.hub.xyz/r/DEBIN5",
-  },
-  {
-    id: "suporte-gratis-hub",
-    theme: "amber-gold",
-    badgeText: "SUPORTE OFICIAL GRÁTIS",
-    badgeType: "gift",
-    avatarType: "gift",
-    title: "Suporte de Cabeça Grátis + Aprovação Rápida",
-    subtitle: "A Hub.xyz envia gratuitamente o suporte de gravação para sua casa para filmar em primeira pessoa!",
-    tags: [
-      { icon: "📦", label: "Frete 100% Grátis" },
-      { icon: "⚡", label: "Aprovação em 24h" },
-      { icon: "💵", label: "Pagamento em Dólar" },
-    ],
-    referralCode: "DEBIN5",
-    ctaText: "Garantir meu suporte",
     ctaUrl: "https://ai.hub.xyz/r/DEBIN5",
   },
 ];

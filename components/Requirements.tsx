@@ -21,11 +21,9 @@ const requirements: RequirementItem[] = [
     badgeColor: "amber",
     title: "Suporte de Cabeça para Celular",
     desc: "É o acessório físico indispensável: um suporte elástico que prende o smartphone na testa, permitindo gravar em primeira pessoa (POV) com as duas mãos 100% livres para realizar as tarefas.",
-    tips: "Custa em média R$ 25 a R$ 45 em marketplaces.",
+    tips: "Custa em média R$ 25 a R$ 45 em marketplaces (como Shopee e Mercado Livre).",
     buttonUrl: "https://s.shopee.com.br/20unTpATT6",
     buttonText: "Comprar na Shopee",
-    secondaryButtonUrl: "https://ai.hub.xyz/r/DEBIN5",
-    secondaryButtonText: "Hub.xyz dá de graça",
     icon: (
       <svg className="w-6 h-6 text-amber-600 dark:text-amberNeon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -135,38 +133,21 @@ export default function Requirements() {
                   <span>{item.tips}</span>
                 </div>
 
-                {/* 🛒 Botões de Ação para Suporte de Cabeça (Shopee + Hub.xyz Grátis) 🛒 */}
-                {(item.buttonUrl || item.secondaryButtonUrl) && (
-                  <div className="mt-4 pt-4 border-t border-slate-200 dark:border-cyber-700/60 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3">
-                    {/* Botão Shopee */}
-                    {item.buttonUrl && (
-                      <a
-                        href={item.buttonUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full flex-1 px-4 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#EE4D2D] via-[#F25A38] to-[#FF6B4A] shadow-[0_0_20px_rgba(238,77,45,0.35)] hover:shadow-[0_0_30px_rgba(238,77,45,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border border-orange-400/40 group/shopee whitespace-nowrap"
-                      >
-                        <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                          <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
-                        </svg>
-                        <span>{item.buttonText || "Comprar na Shopee"}</span>
-                        <span className="group-hover/shopee:translate-x-0.5 transition-transform">↗</span>
-                      </a>
-                    )}
-
-                    {/* Botão Hub.xyz dá de graça */}
-                    {item.secondaryButtonUrl && (
-                      <a
-                        href={item.secondaryButtonUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full flex-1 px-4 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-cyber-950 bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:shadow-[0_0_30px_rgba(255,140,0,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border border-amber-300/50 group/hub whitespace-nowrap"
-                      >
-                        <span className="text-sm shrink-0">🎁</span>
-                        <span>{item.secondaryButtonText || "Hub.xyz dá de graça"}</span>
-                        <span className="group-hover/hub:translate-x-0.5 transition-transform">↗</span>
-                      </a>
-                    )}
+                {/* 🛒 Botão de Ação para Suporte de Cabeça (Shopee) 🛒 */}
+                {item.buttonUrl && (
+                  <div className="mt-4 pt-4 border-t border-slate-200 dark:border-cyber-700/60 flex items-center">
+                    <a
+                      href={item.buttonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#EE4D2D] via-[#F25A38] to-[#FF6B4A] shadow-[0_0_20px_rgba(238,77,45,0.35)] hover:shadow-[0_0_30px_rgba(238,77,45,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border border-orange-400/40 group/shopee whitespace-nowrap"
+                    >
+                      <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/>
+                      </svg>
+                      <span>{item.buttonText || "Comprar na Shopee"}</span>
+                      <span className="group-hover/shopee:translate-x-0.5 transition-transform">↗</span>
+                    </a>
                   </div>
                 )}
               </div>

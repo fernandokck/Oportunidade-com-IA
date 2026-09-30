@@ -21,50 +21,55 @@ const platforms: PlatformItem[] = [
     name: "Flambra",
     titleBadge: "Plataforma Nova!",
     titleBadgeIcon: "✨",
-    payout: "US$ 5 / hora",
-    payoutBadge: "Toda Sexta-feira",
+    payout: "R$ 12,50 a R$ 30 / hora",
+    payoutBadge: "R$ 12,50 Res. | R$ 30 Com.",
     url: "https://app.flambra.com/?ref=58C7E55071",
     status: "Ativo",
-    highlight: "Tarefas do dia a dia · Minute App",
+    highlight: "R$ 12,50 residencial · R$ 30 comercial",
     description:
-      "Upload de vídeos usando o aplicativo da minute que tem como regra aparelhos de uso como Iphone 12 pra cima e Samsung S21 pra cima. Pagamento toda sexta-feira.",
+      "Upload de vídeos usando o aplicativo da minute que tem como regra aparelhos de uso como Iphone 12 pra cima e Samsung S21 pra cima. Paga R$ 12,50 residencial e R$ 30,00 no comercial. Pagamento toda sexta-feira.",
   },
   {
     id: "hub",
     name: "Hub.xyz",
-    titleBadge: "Dá suporte gratuito",
-    titleBadgeIcon: "🎁",
-    payout: "US$ 5 a US$ 8 / hora",
-    payoutBadge: "Dá suporte gratuito",
+    payout: "Até R$ 30 a R$ 70 / hora",
+    payoutBadge: "Até R$ 30 Res. | Até R$ 70 Com.",
     url: "https://ai.hub.xyz/r/DEBIN5",
     status: "Ativo",
-    highlight: "Aprovação rápida de vídeos & Suporte de Cabeça Grátis",
+    highlight: "Até R$ 30/h residencial · Até R$ 70/h comercial",
     description:
-      "Aprova os vídeos enviados mais rápido e tem suporte responsivo. Envia o suporte elástico de cabeça gratuitamente para os usuários gravarem suas tarefas cotidianas.",
+      "Paga até R$ 30 a hora para tarefas residenciais e até R$ 70 a hora para gravações em ambientes comerciais. Aprova os vídeos enviados com agilidade e suporte responsivo.",
   },
   {
     id: "invent",
     name: "Invent Money",
     titleBadge: "Ganhos em Dólar",
     titleBadgeIcon: "💵",
-    payout: "US$ 5 a US$ 8 / hora",
-    payoutBadge: "Ganhos em Dólar",
+    payout: "US$ 60 / hora",
+    payoutBadge: "Precisa de Inglês Fluente",
     url: "https://app.inventmoney.com/r/DNXHJWUM",
     status: "Ativo",
-    highlight: "Tarefas do dia a dia + comerciais",
-    description:
-      "Upload de Vídeos direto na plataforma, não tem exigência de aparelhos celulares, mais a qualidade da filmagem precisa ser boa e na resolução 1080p 30fps ou 60pfs no modo 0,50x da camera.",
+    highlight: "60$ a hora · Precisa de inglês fluente",
+    description: (
+      <>
+        Upload de vídeos direto na plataforma para projetos de validação de IA. Paga US$ 60 por hora e{" "}
+        <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-amber-300 to-amberNeon">
+          precisa de inglês fluente.
+        </span>{" "}
+        Resolução exigida de 1080p 30fps ou 60fps no modo 0,50x da câmera.
+      </>
+    ),
   },
   {
     id: "claru",
     name: "Claru.ai",
-    payout: "US$ 5 a US$ 8 / hora",
-    payoutBadge: "+ Bônus por marcos",
+    payout: "US$ 5 / hora",
+    payoutBadge: "Taxa Fixa",
     url: "https://app.claru.ai/signup?ref=8a2r3gfj",
     status: "Ativo",
-    highlight: "Pagamento semanal automático",
+    highlight: "US$ 5 apenas por hora",
     description:
-      "Paga por hora gravada mais bônus por marco de horas. Processa pagamento toda terça-feira, com saque automático via Pix ao bater US$ 50 — ou já na primeira semana, se você gravar 5h.",
+      "Paga taxa fixa de US$ 5 por hora gravada. Processa pagamento toda terça-feira, com saque automático via Pix ao bater US$ 50 — ou já na primeira semana, se você gravar 5h.",
   },
   {
     id: "crowtado",

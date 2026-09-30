@@ -130,9 +130,9 @@ export default function Hero() {
                     Mapeamento Completo
                   </div>
                   <div className="text-base sm:text-lg lg:text-xl font-display font-black text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amberNeon transition-colors">
-                    Plataformas testadas: <span className="text-amber-600 dark:text-amberNeon">5</span>
+                    Plataformas ativas: <span className="text-amber-600 dark:text-amberNeon">6+</span>
                   </div>
-                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mt-0.5">+ 3 novas em análise</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mt-0.5">Mapeadas e verificadas</div>
                 </div>
               </div>
             </div>
@@ -150,9 +150,9 @@ export default function Hero() {
                     Ganho Estimado
                   </div>
                   <div className="text-base sm:text-lg lg:text-xl font-display font-black text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                    <span className="text-emerald-600 dark:text-emerald-400">$5 a $8</span> por hora
+                    <span className="text-emerald-600 dark:text-emerald-400">R$ 12 a R$ 70+</span> por hora
                   </div>
-                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mt-0.5">Pagamentos em USD / Pix / Cripto</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mt-0.5">Pagamentos em Pix / USD / Cripto</div>
                 </div>
               </div>
             </div>
