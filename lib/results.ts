@@ -13,6 +13,7 @@ export interface Result {
 export const RESULTS: Result[] = [
   { src: "/resultados/hub-total-ganho.jpg", alt: "Cartão de ganhos da HUB mostrando R$ 874,85 de total ganho", label: "HUB.xyz · R$ 874,85 de total ganho" },
   { src: "/resultados/relatorio-horas.jpg", alt: "Relatório de pagamentos com US$ 2.779,31 pagos por 39,7 horas e US$ 1.229,53 pendentes", label: "US$ 2.779,31 pagos por 39,7 horas" },
+  { src: "/resultados/pagamentos-470.jpg", alt: "R$ 470,76 em pagamentos recebidos", label: "R$ 470,76 em pagamentos recebidos" },
   { src: "/resultados/paypal-1862.jpg", alt: "PayPal com R$ 1.862,52 em pagamentos recebidos", label: "PayPal · R$ 1.862,52 recebidos" },
   { src: "/resultados/scale-ai-pagamento.jpg", alt: "Pagamento recebido da Scale AI de 185,93 USDC", label: "Scale AI · pagamento em dólar" },
   { src: "/resultados/hub-saque.jpg", alt: "Saldo de R$ 499,00 disponível para saque na HUB", label: "HUB.xyz · R$ 499 disponível para saque" },
@@ -31,4 +32,9 @@ export const RESULTS: Result[] = [
   { src: "/resultados/scale-labs-cambio.jpg", alt: "Pagamento da Scale Labs de US$ 98,74, convertido em R$ 495,09", label: "Scale Labs · US$ 98,74 = R$ 495,09" },
   { src: "/resultados/scale-ai-pagamento-4.jpg", alt: "Pagamento recebido da Scale AI de 130,57 USDC", label: "Scale AI · 130,57 USDC recebidos" },
   { src: "/resultados/scale-labs-81.jpg", alt: "Pagamento recebido da Scale Labs de US$ 81,42", label: "Scale Labs · US$ 81,42 recebidos" },
+  { src: "/resultados/nubank-paypal.jpg", alt: "Notificações do Nubank com transferências de R$ 312,26 do PayPal e R$ 107,58", label: "R$ 312,26 + R$ 107,58 no Nubank" },
+  { src: "/resultados/scale-labs-110.jpg", alt: "Pagamento recebido da Scale Labs de US$ 110,80", label: "Scale Labs · US$ 110,80 recebidos" },
+  { src: "/resultados/scale-labs-98-66.jpg", alt: "Pagamento recebido da Scale Labs de US$ 98,66", label: "Scale Labs · US$ 98,66 recebidos" },
+  { src: "/resultados/hub-total-189.jpg", alt: "Total ganho de R$ 189,65", label: "HUB.xyz · R$ 189,65 de total ganho" },
+  { src: "/resultados/scale-ai-airtm-59.jpg", alt: "Pagamento da Scale AI de 59,06 USDC recebido na Airtm", label: "Scale AI · 59,06 USDC na Airtm" },
 ];

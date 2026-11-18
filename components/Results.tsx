@@ -1,8 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { RESULTS } from "@/lib/results";
 import { COMMUNITY_URL } from "@/lib/site";
 
+const INITIAL = 9;
+
 export default function Results() {
+  const [showAll, setShowAll] = useState(false);
   if (RESULTS.length === 0) return null;
+  const visible = showAll ? RESULTS : RESULTS.slice(0, INITIAL);
 
   return (
     <section id="resultados" className="section border-t border-white/[0.06]">
@@ -21,7 +28,7 @@ export default function Results() {
         </div>
 
         <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {RESULTS.map((r) => (
+          {visible.map((r) => (
             <li key={r.src}>
               <figure className="card flex h-full flex-col overflow-hidden p-2 transition hover:-translate-y-0.5 hover:border-white/20">
                 <div className="flex h-48 items-center justify-center rounded-[1.25rem] bg-black/40 p-3">
@@ -34,6 +41,14 @@ export default function Results() {
             </li>
           ))}
         </ul>
+
+        {RESULTS.length > INITIAL && (
+          <div className="mt-8 flex justify-center">
+            <button onClick={() => setShowAll((v) => !v)} className="btn-ghost" aria-expanded={showAll}>
+              {showAll ? "Mostrar menos" : `Ver mais resultados (+${RESULTS.length - INITIAL})`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
