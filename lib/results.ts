@@ -17,6 +17,7 @@ export const RESULTS: Result[] = [
   { src: "/resultados/scale-labs-536.jpg", alt: "Pagamento recebido da Scale Labs de US$ 536,10", label: "Scale Labs · US$ 536,10 recebidos" },
   { src: "/resultados/pagamentos-470.jpg", alt: "R$ 470,76 em pagamentos recebidos", label: "R$ 470,76 em pagamentos recebidos" },
   { src: "/resultados/airtm-180-pix.jpg", alt: "Saldo de 180,74 USDC na Airtm convertido em R$ 1.032,47 via Pix", label: "Airtm · 180,74 USDC = R$ 1.032,47 no Pix" },
+  { src: "/resultados/pix-889.jpg", alt: "Detalhe de Pix recebido de R$ 889,26", label: "Pix de R$ 889,26 recebido" },
   { src: "/resultados/paypal-1862.jpg", alt: "PayPal com R$ 1.862,52 em pagamentos recebidos", label: "PayPal · R$ 1.862,52 recebidos" },
   { src: "/resultados/scale-ai-388.jpg", alt: "Pagamento recebido da Scale AI de 388,04 USDC", label: "Scale AI · 388,04 USDC recebidos" },
   { src: "/resultados/scale-ai-pagamento.jpg", alt: "Pagamento recebido da Scale AI de 185,93 USDC", label: "Scale AI · pagamento em dólar" },
@@ -52,4 +53,8 @@ export const RESULTS: Result[] = [
   { src: "/resultados/nubank-146.jpg", alt: "Notificação do Nubank de transferência recebida de R$ 146,30", label: "Transferência de R$ 146,30 recebida" },
   { src: "/resultados/pix-101.jpg", alt: "Pix recebido de R$ 101,25", label: "Pix de R$ 101,25 recebido" },
   { src: "/resultados/pix-wise-70.jpg", alt: "Notificação de Pix de R$ 70,05 da Wise", label: "Pix de R$ 70,05 via Wise" },
+  { src: "/resultados/nubank-316.jpg", alt: "Notificação do Nubank de transferência recebida de R$ 316,28", label: "Transferência de R$ 316,28 recebida" },
+  { src: "/resultados/pix-253.jpg", alt: "Pix recebido de R$ 253,07", label: "Pix de R$ 253,07 recebido" },
+  { src: "/resultados/pix-wise-141.jpg", alt: "Notificação de Pix de R$ 141,43 da Wise", label: "Pix de R$ 141,43 via Wise" },
+  { src: "/resultados/pix-104.jpg", alt: "Notificação de R$ 104,87 recebidos via Pix", label: "Pix de R$ 104,87 recebido" },
 ];
