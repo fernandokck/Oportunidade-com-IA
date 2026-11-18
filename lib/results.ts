@@ -47,4 +47,9 @@ export const RESULTS: Result[] = [
   { src: "/resultados/pix-wise-347.jpg", alt: "Notificação de Pix de R$ 347,78 recebido da Wise", label: "Pix de R$ 347,78 via Wise" },
   { src: "/resultados/pix-294.jpg", alt: "Notificação de Pix recebido de R$ 294,33", label: "Pix de R$ 294,33 recebido" },
   { src: "/resultados/hub-total-159.jpg", alt: "Cartão de ganhos da HUB com R$ 159,50 de total ganho", label: "HUB.xyz · R$ 159,50 de total ganho" },
+  { src: "/resultados/pix-580.jpg", alt: "Notificação de Pix recebido de R$ 580,89", label: "Pix de R$ 580,89 recebido" },
+  { src: "/resultados/hub-saque-311.jpg", alt: "Registro de ganhos da HUB com R$ 311,20 disponível para saque", label: "HUB.xyz · R$ 311,20 para saque" },
+  { src: "/resultados/nubank-146.jpg", alt: "Notificação do Nubank de transferência recebida de R$ 146,30", label: "Transferência de R$ 146,30 recebida" },
+  { src: "/resultados/pix-101.jpg", alt: "Pix recebido de R$ 101,25", label: "Pix de R$ 101,25 recebido" },
+  { src: "/resultados/pix-wise-70.jpg", alt: "Notificação de Pix de R$ 70,05 da Wise", label: "Pix de R$ 70,05 via Wise" },
 ];
