@@ -13,8 +13,10 @@ export interface Result {
 export const RESULTS: Result[] = [
   { src: "/resultados/hub-total-ganho.jpg", alt: "Cartão de ganhos da HUB mostrando R$ 874,85 de total ganho", label: "HUB.xyz · R$ 874,85 de total ganho" },
   { src: "/resultados/relatorio-horas.jpg", alt: "Relatório de pagamentos com US$ 2.779,31 pagos por 39,7 horas e US$ 1.229,53 pendentes", label: "US$ 2.779,31 pagos por 39,7 horas" },
+  { src: "/resultados/scale-labs-536.jpg", alt: "Pagamento recebido da Scale Labs de US$ 536,10", label: "Scale Labs · US$ 536,10 recebidos" },
   { src: "/resultados/pagamentos-470.jpg", alt: "R$ 470,76 em pagamentos recebidos", label: "R$ 470,76 em pagamentos recebidos" },
   { src: "/resultados/paypal-1862.jpg", alt: "PayPal com R$ 1.862,52 em pagamentos recebidos", label: "PayPal · R$ 1.862,52 recebidos" },
+  { src: "/resultados/scale-ai-388.jpg", alt: "Pagamento recebido da Scale AI de 388,04 USDC", label: "Scale AI · 388,04 USDC recebidos" },
   { src: "/resultados/scale-ai-pagamento.jpg", alt: "Pagamento recebido da Scale AI de 185,93 USDC", label: "Scale AI · pagamento em dólar" },
   { src: "/resultados/hub-saque.jpg", alt: "Saldo de R$ 499,00 disponível para saque na HUB", label: "HUB.xyz · R$ 499 disponível para saque" },
   { src: "/resultados/scale-aether-ganhos.jpg", alt: "Painel de ganhos com US$ 211 entre abril e setembro de 2026", label: "Projeto Aether · US$ 211 em ganhos" },
@@ -37,4 +39,7 @@ export const RESULTS: Result[] = [
   { src: "/resultados/scale-labs-98-66.jpg", alt: "Pagamento recebido da Scale Labs de US$ 98,66", label: "Scale Labs · US$ 98,66 recebidos" },
   { src: "/resultados/hub-total-189.jpg", alt: "Total ganho de R$ 189,65", label: "HUB.xyz · R$ 189,65 de total ganho" },
   { src: "/resultados/scale-ai-airtm-59.jpg", alt: "Pagamento da Scale AI de 59,06 USDC recebido na Airtm", label: "Scale AI · 59,06 USDC na Airtm" },
+  { src: "/resultados/pagamentos-391.jpg", alt: "R$ 391,95 em pagamentos recebidos, com Scale Labs US$ 76,17 e Tremendous US$ 5,00", label: "R$ 391,95 em pagamentos recebidos" },
+  { src: "/resultados/paypal-bb-notificacoes.jpg", alt: "Notificações de US$ 11,02 da Scale Labs via PayPal e Pix de R$ 114,02", label: "PayPal US$ 11,02 + Pix de R$ 114,02" },
+  { src: "/resultados/scale-labs-51.jpg", alt: "Pagamento recebido da Scale Labs de US$ 51,34", label: "Scale Labs · US$ 51,34 recebidos" },
 ];
