@@ -12,6 +12,7 @@ export interface Result {
 
 export const RESULTS: Result[] = [
   { src: "/resultados/hub-total-ganho.jpg", alt: "Cartão de ganhos da HUB mostrando R$ 874,85 de total ganho", label: "HUB.xyz · R$ 874,85 de total ganho" },
+  { src: "/resultados/relatorio-horas.jpg", alt: "Relatório de pagamentos com US$ 2.779,31 pagos por 39,7 horas e US$ 1.229,53 pendentes", label: "US$ 2.779,31 pagos por 39,7 horas" },
   { src: "/resultados/paypal-1862.jpg", alt: "PayPal com R$ 1.862,52 em pagamentos recebidos", label: "PayPal · R$ 1.862,52 recebidos" },
   { src: "/resultados/scale-ai-pagamento.jpg", alt: "Pagamento recebido da Scale AI de 185,93 USDC", label: "Scale AI · pagamento em dólar" },
   { src: "/resultados/hub-saque.jpg", alt: "Saldo de R$ 499,00 disponível para saque na HUB", label: "HUB.xyz · R$ 499 disponível para saque" },
@@ -26,4 +27,8 @@ export const RESULTS: Result[] = [
   { src: "/resultados/earnings-371.jpg", alt: "Painel de ganhos com US$ 371", label: "US$ 371 em ganhos" },
   { src: "/resultados/earnings-203.jpg", alt: "Painel de ganhos com US$ 203 entre abril e setembro de 2026", label: "Outlier · US$ 203 em ganhos" },
   { src: "/resultados/scale-ai-pagamento-3.jpg", alt: "Pagamento recebido da Scale AI de 92,74 USDC", label: "Scale AI · 92,74 USDC recebidos" },
+  { src: "/resultados/outlier-airtm-202.jpg", alt: "Pagamento da Outlier de 202,52 USDC recebido na Airtm", label: "Outlier · 202,52 USDC na Airtm" },
+  { src: "/resultados/scale-labs-cambio.jpg", alt: "Pagamento da Scale Labs de US$ 98,74, convertido em R$ 495,09", label: "Scale Labs · US$ 98,74 = R$ 495,09" },
+  { src: "/resultados/scale-ai-pagamento-4.jpg", alt: "Pagamento recebido da Scale AI de 130,57 USDC", label: "Scale AI · 130,57 USDC recebidos" },
+  { src: "/resultados/scale-labs-81.jpg", alt: "Pagamento recebido da Scale Labs de US$ 81,42", label: "Scale Labs · US$ 81,42 recebidos" },
 ];
