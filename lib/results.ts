@@ -11,10 +11,12 @@ export interface Result {
 }
 
 export const RESULTS: Result[] = [
+  { src: "/resultados/micro1-3500.jpg", alt: "E-mail da micro1 com pagamento de US$ 3.500,87", label: "micro1 · US$ 3.500,87 recebidos" },
   { src: "/resultados/hub-total-ganho.jpg", alt: "Cartão de ganhos da HUB mostrando R$ 874,85 de total ganho", label: "HUB.xyz · R$ 874,85 de total ganho" },
   { src: "/resultados/relatorio-horas.jpg", alt: "Relatório de pagamentos com US$ 2.779,31 pagos por 39,7 horas e US$ 1.229,53 pendentes", label: "US$ 2.779,31 pagos por 39,7 horas" },
   { src: "/resultados/scale-labs-536.jpg", alt: "Pagamento recebido da Scale Labs de US$ 536,10", label: "Scale Labs · US$ 536,10 recebidos" },
   { src: "/resultados/pagamentos-470.jpg", alt: "R$ 470,76 em pagamentos recebidos", label: "R$ 470,76 em pagamentos recebidos" },
+  { src: "/resultados/airtm-180-pix.jpg", alt: "Saldo de 180,74 USDC na Airtm convertido em R$ 1.032,47 via Pix", label: "Airtm · 180,74 USDC = R$ 1.032,47 no Pix" },
   { src: "/resultados/paypal-1862.jpg", alt: "PayPal com R$ 1.862,52 em pagamentos recebidos", label: "PayPal · R$ 1.862,52 recebidos" },
   { src: "/resultados/scale-ai-388.jpg", alt: "Pagamento recebido da Scale AI de 388,04 USDC", label: "Scale AI · 388,04 USDC recebidos" },
   { src: "/resultados/scale-ai-pagamento.jpg", alt: "Pagamento recebido da Scale AI de 185,93 USDC", label: "Scale AI · pagamento em dólar" },
@@ -42,4 +44,7 @@ export const RESULTS: Result[] = [
   { src: "/resultados/pagamentos-391.jpg", alt: "R$ 391,95 em pagamentos recebidos, com Scale Labs US$ 76,17 e Tremendous US$ 5,00", label: "R$ 391,95 em pagamentos recebidos" },
   { src: "/resultados/paypal-bb-notificacoes.jpg", alt: "Notificações de US$ 11,02 da Scale Labs via PayPal e Pix de R$ 114,02", label: "PayPal US$ 11,02 + Pix de R$ 114,02" },
   { src: "/resultados/scale-labs-51.jpg", alt: "Pagamento recebido da Scale Labs de US$ 51,34", label: "Scale Labs · US$ 51,34 recebidos" },
+  { src: "/resultados/pix-wise-347.jpg", alt: "Notificação de Pix de R$ 347,78 recebido da Wise", label: "Pix de R$ 347,78 via Wise" },
+  { src: "/resultados/pix-294.jpg", alt: "Notificação de Pix recebido de R$ 294,33", label: "Pix de R$ 294,33 recebido" },
+  { src: "/resultados/hub-total-159.jpg", alt: "Cartão de ganhos da HUB com R$ 159,50 de total ganho", label: "HUB.xyz · R$ 159,50 de total ganho" },
 ];
