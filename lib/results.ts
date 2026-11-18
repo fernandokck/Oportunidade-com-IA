@@ -57,4 +57,6 @@ export const RESULTS: Result[] = [
   { src: "/resultados/pix-253.jpg", alt: "Pix recebido de R$ 253,07", label: "Pix de R$ 253,07 recebido" },
   { src: "/resultados/pix-wise-141.jpg", alt: "Notificação de Pix de R$ 141,43 da Wise", label: "Pix de R$ 141,43 via Wise" },
   { src: "/resultados/pix-104.jpg", alt: "Notificação de R$ 104,87 recebidos via Pix", label: "Pix de R$ 104,87 recebido" },
+  { src: "/resultados/hub-total-292.jpg", alt: "Total ganho de R$ 292,85 na HUB", label: "HUB.xyz · R$ 292,85 de total ganho" },
+  { src: "/resultados/pix-287.jpg", alt: "Pix recebido de R$ 287,86", label: "Pix de R$ 287,86 recebido" },
 ];
