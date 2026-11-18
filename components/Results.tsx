@@ -20,13 +20,15 @@ export default function Results() {
           </a>
         </div>
 
-        <ul className="mt-12 columns-2 gap-4 sm:columns-3 lg:columns-4">
+        <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {RESULTS.map((r) => (
-            <li key={r.src} className="mb-4 break-inside-avoid">
-              <figure className="card overflow-hidden p-1.5 transition hover:-translate-y-0.5 hover:border-white/20">
-                <img src={r.src} alt={r.alt} loading="lazy" className="w-full rounded-[1.25rem]" />
+            <li key={r.src}>
+              <figure className="card flex h-full flex-col overflow-hidden p-2 transition hover:-translate-y-0.5 hover:border-white/20">
+                <div className="flex h-48 items-center justify-center rounded-[1.25rem] bg-black/40 p-3">
+                  <img src={r.src} alt={r.alt} loading="lazy" className="max-h-full w-full rounded-xl object-contain" />
+                </div>
                 {r.label && (
-                  <figcaption className="px-3 pb-2 pt-3 text-xs font-medium text-stone-400">{r.label}</figcaption>
+                  <figcaption className="px-3 pb-2 pt-3 text-sm font-medium text-stone-300">{r.label}</figcaption>
                 )}
               </figure>
             </li>
