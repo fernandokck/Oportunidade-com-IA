@@ -1,69 +1,55 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
-import MouseGlow from "@/components/MouseGlow";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-outfit",
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Oportunidades com IA",
+  title: "Oportunidades com IA · Ganhe treinando inteligência artificial",
   description:
-    "Fazer tarefas domésticas não será mais problema: agora você é remunerado para treinar modelos de IA e robótica com vídeos curtos do dia a dia.",
+    "Grave tarefas do dia a dia com o celular e receba de R$ 10 a R$ 67,50 por hora treinando IA e robótica na HUB.xyz. Calcule seus ganhos e entre na comunidade ParaIA.",
   keywords: [
     "Treinar IA",
-    "Tarefas domésticas IA",
-    "Oportunidades com IA",
+    "Treinamento de IA",
+    "HUB.xyz",
     "Renda extra IA",
-    "Claru ai",
-    "Crowtado",
-    "Robótica doméstica",
+    "Tarefas domésticas IA",
+    "ParaIA",
+    "Oportunidades com IA",
   ],
-  icons: {
-    icon: "/logo.jpg",
+  icons: { icon: "/logo.jpg" },
+  openGraph: {
+    title: "Ganhe dinheiro treinando IA",
+    description:
+      "De R$ 10 a R$ 67,50 por hora gravando tarefas do dia a dia. Calcule seus ganhos.",
+    images: ["/hero-person.jpg"],
+    locale: "pt_BR",
+    type: "website",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: "#080504",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${inter.variable} dark`} suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                var savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                } else {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
-      </head>
-      <body className="bg-slate-50 dark:bg-cyber-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amberNeon selection:text-cyber-950 min-h-screen relative overflow-x-hidden transition-colors">
-        {/* Google Analytics 4 */}
+    <html lang="pt-BR" className={`${outfit.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-cyber-950 font-sans text-stone-200 antialiased">
         <GoogleAnalytics gaId="G-6NTBGFKVMG" />
-        {/* Luz fluorescente interativa que acompanha o mouse */}
-        <MouseGlow />
         {children}
       </body>
     </html>
