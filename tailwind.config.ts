@@ -21,10 +21,12 @@ const config: Config = {
         brand: "0 10px 24px -10px rgba(242,120,12,0.55)",
       },
       keyframes: {
+        float: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-6px)" } },
         "marquee-left": { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
         "marquee-right": { from: { transform: "translateX(-50%)" }, to: { transform: "translateX(0)" } },
       },
       animation: {
+        float: "float 4s ease-in-out infinite",
         "marquee-left": "marquee-left var(--duration, 80s) linear infinite",
         "marquee-right": "marquee-right var(--duration, 80s) linear infinite",
       },

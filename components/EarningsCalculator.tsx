@@ -84,9 +84,11 @@ export default function EarningsCalculator() {
         aria-hidden
       />
       <div className="container-x relative">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">Calculadora de ganhos</span>
-          <h2 className="h2">Quanto você pode ganhar treinando IA?</h2>
+          <h2 className="h2">
+            Quanto você pode ganhar <span className="whitespace-nowrap">treinando IA?</span>
+          </h2>
           <p className="lead mx-auto">
             Ajuste as horas, a quantidade de pessoas que você indica e veja o resultado com os valores atuais da HUB.xyz.
           </p>

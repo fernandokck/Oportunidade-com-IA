@@ -1,5 +1,115 @@
 import { HUB_URL } from "@/lib/site";
 
+const VIDEO_ID = "tIg41c37V4Y";
+
+/** Balões que explicam, na prática, o que acontece no vídeo. */
+const BALLOONS = [
+  {
+    step: "1 · Prepare",
+    title: "Celular preso na testa",
+    text: "Suporte de cabeça e bateria carregada",
+    icon: "📱",
+    pos: "right-[calc(100%-72px)] top-[6%]",
+    delay: "0s",
+  },
+  {
+    step: "2 · Ilumine",
+    title: "Ambiente bem claro",
+    text: "Luz natural, sem contraluz",
+    icon: "💡",
+    pos: "right-[calc(100%-72px)] top-[50%]",
+    delay: "1.2s",
+  },
+  {
+    step: "3 · Grave",
+    title: "Mãos sempre no quadro",
+    text: "Pegue e solte os objetos devagar",
+    icon: "🙌",
+    pos: "left-[calc(100%-80px)] top-[26%]",
+    delay: "0.6s",
+  },
+  {
+    step: "4 · Envie",
+    title: "Vídeo aprovado",
+    text: "+ R$ 10 a R$ 67,50 por hora",
+    icon: "✅",
+    pos: "left-[calc(100%-80px)] bottom-[8%]",
+    delay: "1.8s",
+    highlight: true,
+  },
+];
+
+function Balloon({ b }: { b: (typeof BALLOONS)[number] }) {
+  return (
+    <div
+      className={`flex w-48 items-start gap-2.5 rounded-2xl border bg-white/95 p-3 shadow-lift backdrop-blur ${
+        b.highlight ? "border-emerald-200" : "border-slate-200/70"
+      }`}
+    >
+      <span
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg ${
+          b.highlight ? "bg-emerald-50" : "bg-brand-soft"
+        }`}
+        aria-hidden
+      >
+        {b.icon}
+      </span>
+      <div className="min-w-0">
+        <p className={`text-[11px] font-semibold ${b.highlight ? "text-emerald-700" : "text-brand-deep"}`}>{b.step}</p>
+        <p className="text-sm font-semibold leading-tight text-ink">{b.title}</p>
+        <p className="mt-0.5 text-xs leading-snug text-slate-500">{b.text}</p>
+      </div>
+    </div>
+  );
+}
+
+function HeroVideo() {
+  return (
+    <div className="relative mx-auto w-full max-w-md">
+      <div className="relative mx-auto w-[270px] sm:w-[290px]">
+        {/* Moldura de celular */}
+        <div className="relative overflow-hidden rounded-[2.4rem] border-[7px] border-ink bg-ink shadow-lift">
+          <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" aria-hidden />
+          <div className="absolute right-3 top-9 z-10 flex items-center gap-1.5 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
+            REC · POV na prática
+          </div>
+          <div className="relative aspect-[9/16] w-full bg-ink">
+            <iframe
+              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&rel=0&modestbranding=1&playsinline=1&controls=0`}
+              title="Demonstração na prática: gravação de tarefas para treinamento de IA"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="h-full w-full border-0"
+            />
+          </div>
+        </div>
+
+        {/* Balões ao redor do vídeo (telas médias e grandes) */}
+        {BALLOONS.map((b) => (
+          <div
+            key={b.step}
+            className={`absolute z-20 hidden sm:block ${b.pos}`}
+          >
+            <div className="animate-float" style={{ animationDelay: b.delay }}>
+              <Balloon b={b} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* No celular, os balões viram um passo a passo abaixo do vídeo */}
+      <ol className="mt-5 grid grid-cols-2 gap-2.5 sm:hidden">
+        {BALLOONS.map((b) => (
+          <li key={b.step} className="[&>div]:w-full">
+            <Balloon b={b} />
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section id="topo" className="relative overflow-hidden pb-10 pt-28 sm:pb-14 sm:pt-32">
@@ -54,28 +164,7 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="relative overflow-hidden rounded-[2rem] border-4 border-white shadow-lift">
-            <img
-              src="/hero-person.jpg"
-              alt="Pessoa gravando tarefa doméstica com o celular preso na cabeça"
-              className="aspect-[4/5] w-full object-cover"
-            />
-          </div>
-
-          <div className="absolute -bottom-5 -left-3 w-56 rounded-2xl bg-white p-4 shadow-lift sm:-left-8">
-            <p className="text-xs font-medium text-slate-500">12h de tarefas comerciais</p>
-            <p className="mt-0.5 font-display text-2xl font-bold text-ink">R$ 810,00</p>
-            <p className="mt-0.5 text-xs font-medium text-emerald-600">R$ 67,50 por hora validada</p>
-          </div>
-          <div className="absolute -right-2 top-6 flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2.5 shadow-lift sm:-right-6">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">✓</span>
-            <p className="text-sm font-semibold leading-tight text-ink">
-              Pago por
-              <span className="block text-xs font-medium text-slate-500">hora aprovada</span>
-            </p>
-          </div>
-        </div>
+        <HeroVideo />
       </div>
     </section>
   );

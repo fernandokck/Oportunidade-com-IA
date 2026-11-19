@@ -103,7 +103,8 @@ input[type="range"].range:focus-visible::-webkit-slider-thumb {
     overflow-x: auto !important;
     mask-image: none;
   }
-  .marquee-track {
+  .marquee-track,
+  .animate-float {
     animation: none !important;
   }
 }
