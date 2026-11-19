@@ -2,39 +2,33 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        cyber: {
-          950: "#080504", // Fundo principal ultra dark com toque âmbar
-          900: "#100B07", // Fundo de seções
-          850: "#18100B", // Fundo de cards
-          800: "#221710", // Superfícies elevadas
-          700: "#322218", // Bordas de cards
-          600: "#493223", // Bordas ativas
-        },
-        amberNeon: "#FF8C00",
-        amberGlow: "rgba(255, 140, 0, 0.25)",
-        goldNeon: "#F59E0B",
-        goldGlow: "rgba(245, 158, 11, 0.25)",
-        fireNeon: "#FF4500",
-        whatsappGreen: "#25D366",
-        cyanNeon: "#00E5FF",
+        cream: "#FBF8F3",
+        sand: "#F4EEE6",
+        ink: "#1E2433",
+        brand: { DEFAULT: "#F2780C", soft: "#FFF1E3", deep: "#C85A00" },
+        telegram: "#229ED9",
       },
       fontFamily: {
         display: ["var(--font-outfit)", "system-ui", "sans-serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        "amber-glow": "0 0 30px -5px rgba(255, 140, 0, 0.35)",
-        "gold-glow": "0 0 30px -5px rgba(245, 158, 11, 0.35)",
-        "fire-glow": "0 0 35px -5px rgba(255, 69, 0, 0.4)",
-        "wa-glow": "0 0 25px -3px rgba(37, 211, 102, 0.45)",
+        soft: "0 1px 2px rgba(30,36,51,0.04), 0 8px 24px -12px rgba(30,36,51,0.12)",
+        lift: "0 2px 4px rgba(30,36,51,0.04), 0 18px 40px -18px rgba(30,36,51,0.22)",
+        brand: "0 10px 24px -10px rgba(242,120,12,0.55)",
       },
-      backgroundImage: {
-        "cyber-grid": "linear-gradient(to right, rgba(255, 140, 0, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 140, 0, 0.04) 1px, transparent 1px)",
-        "amber-radial": "radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 80%)",
+      keyframes: {
+        float: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-6px)" } },
+        "marquee-left": { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        "marquee-right": { from: { transform: "translateX(-50%)" }, to: { transform: "translateX(0)" } },
+      },
+      animation: {
+        float: "float 4s ease-in-out infinite",
+        "marquee-left": "marquee-left var(--duration, 80s) linear infinite",
+        "marquee-right": "marquee-right var(--duration, 80s) linear infinite",
       },
     },
   },
