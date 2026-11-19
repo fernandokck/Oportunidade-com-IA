@@ -24,7 +24,7 @@ const videos = [
 
 export default function HubSpotlight() {
   return (
-    <section id="hub" className="section overflow-hidden border-t border-white/[0.06]">
+    <section id="hub" className="section overflow-hidden">
       <div
         className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-emerald-500/10 blur-[120px]"
         aria-hidden
@@ -32,7 +32,7 @@ export default function HubSpotlight() {
       <div className="container-x relative">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="eyebrow border-emerald-400/25 bg-emerald-400/10 text-emerald-300">
+            <span className="eyebrow bg-emerald-50 text-emerald-700">
               ★ Plataforma em destaque
             </span>
             <h2 className="h2">
@@ -51,7 +51,7 @@ export default function HubSpotlight() {
           </a>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           {tiers.map((t) => {
             const r = RATES[t.key];
             return (
@@ -62,34 +62,34 @@ export default function HubSpotlight() {
                     alt={t.alt}
                     className="h-full w-full object-cover object-[50%_30%] transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyber-950 via-cyber-950/40 to-transparent" />
-                  <span className="absolute left-5 top-5 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/10 to-transparent" />
+                  <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ink shadow-soft backdrop-blur">
                     {t.label}
                   </span>
                 </div>
                 <div className="p-7 pt-2">
-                  <p className="font-display text-5xl font-extrabold tracking-tight text-white">
+                  <p className="font-display text-5xl font-extrabold tracking-tight text-ink">
                     {brl(r.hour)}
-                    <span className="ml-1 text-lg font-semibold text-stone-500">/hora</span>
+                    <span className="ml-1 text-lg font-semibold text-slate-500">/hora</span>
                   </p>
-                  <p className="mt-2 text-sm text-stone-400">
-                    12 horas = <strong className="text-white">{brl(r.hour * 12)}</strong>
+                  <p className="mt-2 text-sm text-slate-500">
+                    12 horas = <strong className="text-ink">{brl(r.hour * 12)}</strong>
                   </p>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {t.examples.map((e) => (
-                      <li key={e} className="rounded-full border border-white/10 px-3 py-1 text-xs text-stone-300">
+                      <li key={e} className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-600">
                         {e}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-5 text-sm">
+                  <div className="mt-6 grid grid-cols-2 gap-3 border-t border-slate-200 pt-5 text-sm">
                     <div>
-                      <p className="text-stone-500">Seu indicado</p>
-                      <p className="font-semibold text-emerald-400">+{brl(r.level1)} por hora</p>
+                      <p className="text-slate-500">Seu indicado</p>
+                      <p className="font-semibold text-emerald-600">+{brl(r.level1)} por hora</p>
                     </div>
                     <div>
-                      <p className="text-stone-500">Indicado do indicado</p>
-                      <p className="font-semibold text-emerald-400">+{brl(r.level2)} por hora</p>
+                      <p className="text-slate-500">Indicado do indicado</p>
+                      <p className="font-semibold text-emerald-600">+{brl(r.level2)} por hora</p>
                     </div>
                   </div>
                 </div>
@@ -98,14 +98,14 @@ export default function HubSpotlight() {
           })}
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
           {videos.map((v) => (
             <a
               key={v.id}
               href={`https://www.youtube.com/watch?v=${v.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="card group flex items-center gap-4 p-3 pr-5 transition hover:border-white/20"
+              className="card group flex items-center gap-4 p-3 pr-5 transition hover:border-slate-300"
             >
               <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded-2xl">
                 <img
@@ -114,15 +114,15 @@ export default function HubSpotlight() {
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <span className="absolute inset-0 flex items-center justify-center bg-black/30">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-cyber-950">
+                <span className="absolute inset-0 flex items-center justify-center bg-sand">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink">
                     ▶
                   </span>
                 </span>
               </div>
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-stone-500">Tutorial HUB.xyz</p>
-                <p className="mt-1 font-display font-semibold text-white group-hover:text-amber-300">{v.title}</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-slate-500">Tutorial HUB.xyz</p>
+                <p className="mt-1 font-display font-semibold text-ink group-hover:text-brand-deep">{v.title}</p>
               </div>
             </a>
           ))}

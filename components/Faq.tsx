@@ -27,23 +27,23 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section id="faq" className="section border-t border-white/[0.06]">
-      <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+    <section id="faq" className="section">
+      <div className="container-x grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <span className="eyebrow">Dúvidas</span>
           <h2 className="h2">Perguntas frequentes</h2>
           <p className="lead">Não achou sua resposta? Pergunte direto na comunidade.</p>
         </div>
-        <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
+        <div className="divide-y divide-slate-200 border-y border-slate-200">
           {faqs.map((f, i) => (
             <details key={f.q} className="group py-5" open={i === 0}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-white [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
                 {f.q}
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 text-stone-400 transition group-open:rotate-45 group-open:text-amber-300">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition group-open:rotate-45 group-open:text-brand-deep">
                   +
                 </span>
               </summary>
-              <p className="mt-3 pr-12 leading-relaxed text-stone-400">{f.a}</p>
+              <p className="mt-3 pr-12 leading-relaxed text-slate-500">{f.a}</p>
             </details>
           ))}
         </div>

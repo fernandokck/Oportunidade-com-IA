@@ -1,5 +1,5 @@
 export const HUB_URL = "https://ai.hub.xyz/r/DEBIN5";
-export const COMMUNITY_URL = "https://chat.whatsapp.com/IpNve1GYwzG5RnKDWDbixV?mode=gi_t";
+export const COMMUNITY_URL = "https://t.me/+6t10DYAbKAM4NWUx";
 export const HEAD_MOUNT_URL = "https://s.shopee.com.br/20unTpATT6";
 
 /** Valores de referência da HUB.xyz (R$ por hora validada). */

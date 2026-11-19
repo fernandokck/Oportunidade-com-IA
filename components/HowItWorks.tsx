@@ -43,7 +43,7 @@ const reasons = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="section border-t border-white/[0.06]">
+    <section id="como-funciona" className="section">
       <div className="container-x">
         <div className="max-w-3xl">
           <span className="eyebrow">O que é</span>
@@ -56,24 +56,24 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <ol className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <ol className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
           {steps.map((s) => (
-            <li key={s.n} className="card relative p-7">
-              <span className="font-display text-sm font-bold text-amberNeon">{s.n}</span>
-              <h3 className="mt-3 font-display text-xl font-bold text-white">{s.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-stone-400">{s.text}</p>
+            <li key={s.n} className="card relative p-6">
+              <span className="font-display text-sm font-bold text-brand">{s.n}</span>
+              <h3 className="mt-3 font-display text-xl font-bold text-ink">{s.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-slate-500">{s.text}</p>
             </li>
           ))}
         </ol>
-        <p className="mt-4 text-sm text-stone-500">
+        <p className="mt-4 text-sm text-slate-500">
           Ainda não tem o suporte?{" "}
-          <a href={HEAD_MOUNT_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-amber-300 underline-offset-4 hover:underline">
+          <a href={HEAD_MOUNT_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-deep underline-offset-4 hover:underline">
             Veja uma opção na Shopee
           </a>
           .
         </p>
 
-        <div className="mt-24 grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <span className="eyebrow">Por que fazer</span>
             <h2 className="h2">Uma renda nova, com o que você já sabe fazer.</h2>
@@ -88,8 +88,8 @@ export default function HowItWorks() {
                 <span className="text-2xl" aria-hidden>
                   {r.icon}
                 </span>
-                <h3 className="mt-3 font-display text-lg font-bold text-white">{r.title}</h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-stone-400">{r.text}</p>
+                <h3 className="mt-3 font-display text-lg font-bold text-ink">{r.title}</h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-slate-500">{r.text}</p>
               </li>
             ))}
           </ul>

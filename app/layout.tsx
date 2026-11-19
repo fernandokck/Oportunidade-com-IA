@@ -42,13 +42,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#080504",
+  themeColor: "#FBF8F3",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-cyber-950 font-sans text-stone-200 antialiased">
+      <body className="min-h-screen bg-cream font-sans text-ink antialiased">
         <GoogleAnalytics gaId="G-6NTBGFKVMG" />
         {children}
       </body>

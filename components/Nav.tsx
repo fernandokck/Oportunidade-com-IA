@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COMMUNITY_URL } from "@/lib/site";
 import { RESULTS } from "@/lib/results";
+import TelegramIcon from "./icons/TelegramIcon";
 
 const links = [
   { href: "#como-funciona", label: "Como funciona" },
@@ -27,26 +28,24 @@ export default function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-white/[0.06] bg-cyber-950/80 backdrop-blur-xl"
-          : "border-b border-transparent"
+        scrolled || open ? "border-b border-slate-200/70 bg-cream/85 backdrop-blur-xl" : "border-b border-transparent"
       }`}
     >
       <nav className="container-x flex h-16 items-center justify-between gap-4">
         <a href="#topo" className="flex items-center gap-2.5">
-          <img src="/logo.jpg" alt="" className="h-9 w-9 rounded-xl ring-1 ring-white/10" />
-          <span className="font-display text-[15px] font-bold leading-tight text-white">
+          <img src="/logo.jpg" alt="" className="h-9 w-9 rounded-xl shadow-soft" />
+          <span className="font-display text-[15px] font-bold leading-tight text-ink">
             ParaIA
-            <span className="block text-[11px] font-medium text-stone-400">Oportunidades com IA</span>
+            <span className="block text-[11px] font-medium text-slate-500">Oportunidades com IA</span>
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-stone-400 transition hover:bg-white/[0.05] hover:text-white"
+                className="rounded-full px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-ink"
               >
                 {l.label}
               </a>
@@ -59,15 +58,16 @@ export default function Nav() {
             href={COMMUNITY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full bg-white px-4 py-2 text-sm font-bold text-cyber-950 transition hover:bg-amber-100 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-telegram px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:inline-flex"
           >
+            <TelegramIcon className="h-4 w-4" />
             Entrar na comunidade
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
-            className="rounded-full p-2 text-stone-300 hover:bg-white/[0.06] lg:hidden"
+            className="rounded-full p-2 text-slate-600 hover:bg-white lg:hidden"
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               {open ? (
@@ -81,21 +81,22 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="container-x pb-5 lg:hidden">
-          <ul className="grid gap-1">
+        <div className="container-x pb-4 lg:hidden">
+          <ul className="grid gap-0.5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-3 py-3 text-base font-medium text-stone-300 hover:bg-white/[0.05]"
+                  className="block rounded-xl px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-white"
                 >
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" className="btn-wa mt-3 w-full">
+          <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" className="btn-tg mt-3 w-full">
+            <TelegramIcon />
             Entrar na comunidade
           </a>
         </div>
